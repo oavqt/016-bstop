@@ -9,7 +9,7 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
-    'no-console': 'warn',
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'no-console': 'warn'
   }
 };

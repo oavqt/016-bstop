@@ -4,9 +4,9 @@ module.exports = async () => {
       '\\.(s?[as]ss?)$/i': 'identity-obj-proxy'
     },
     modulePathIgnorePatterns: [
-      '<rootDir>/src/__tests__/__transformers__',
+      '<rootDir>/node__modules',
       '<rootDir>/src/__tests__/__mocks__',
-      '<rootDir>/node__modules'
+      '<rootDir>/src/__tests__/__transformers__'
     ],
     transform: {
       '\\.(png|svg|jpg|jpeg|gir)$':
