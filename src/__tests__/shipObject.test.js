@@ -1,4 +1,4 @@
-import shipObject from '../ships/shipObject';
+import shipObject from '../shipFactory/shipObject';
 
 const cases = [
   [
