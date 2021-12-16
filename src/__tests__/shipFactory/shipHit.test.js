@@ -1,16 +1,28 @@
 import isHit from '../../shipFactory/shipHit';
 
-const locumObject = { ship: ['f4', 'a8', 'd3', 'e6', 'h3'] };
-const locumFunction = (coords) => isHit.call(locumObject, coords);
-
-test('compare values and replace with a hit marker', () => {
-  locumFunction('e6');
-  expect(locumObject.ship).toStrictEqual(['f4', 'a8', 'd3', '--', 'h3']);
-});
+const locumObject = { locumAlive: { ship: ['f1', 'f2', 'f3', 'f4', 'f5'] } };
+const locumFunction = (coords) => isHit.call(locumObject.locumAlive, coords);
 
 test('compare values and replace with a hit marker', () => {
   locumFunction('f4');
-  expect(locumObject.ship).toStrictEqual(['--', 'a8', 'd3', '--', 'h3']);
+  expect(locumObject.locumAlive.ship).toStrictEqual([
+    'f1',
+    'f2',
+    'f3',
+    '--',
+    'f5'
+  ]);
+});
+
+test('compare values and replace with a hit marker', () => {
+  locumFunction('f1');
+  expect(locumObject.locumAlive.ship).toStrictEqual([
+    '--',
+    'f2',
+    'f3',
+    '--',
+    'f5'
+  ]);
 });
 
 test('parameter not found on this.ship', () => {
@@ -18,5 +30,5 @@ test('parameter not found on this.ship', () => {
 });
 
 test('parameter found on this.ship', () => {
-  expect(locumFunction('a8')).toBe('success');
+  expect(locumFunction('f2')).toBe('success');
 });
