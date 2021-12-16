@@ -1,7 +1,7 @@
-import shipHit from '../shipFactory/shipHit';
+import isHit from '../../shipFactory/shipHit';
 
 const locumObject = { ship: ['f4', 'a8', 'd3', 'e6', 'h3'] };
-const locumFunction = (coords) => shipHit.call(locumObject, coords);
+const locumFunction = (coords) => isHit.call(locumObject, coords);
 
 test('compare values and replace with a hit marker', () => {
   locumFunction('e6');

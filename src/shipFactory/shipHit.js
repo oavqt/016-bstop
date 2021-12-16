@@ -1,4 +1,4 @@
-function shipHit(coords) {
+function isHit(coords) {
   const index = this.ship.findIndex((value) => value === coords);
   let result = 'coords not found';
 
@@ -10,4 +10,4 @@ function shipHit(coords) {
   return result;
 }
 
-export default shipHit;
+export default isHit;

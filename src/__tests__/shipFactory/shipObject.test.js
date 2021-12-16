@@ -1,4 +1,4 @@
-import shipObject from '../shipFactory/shipObject';
+import ship from '../../shipFactory/shipObject';
 
 const cases = [
   [
@@ -41,6 +41,6 @@ const cases = [
 test.each(cases)(
   'return an object consisting of a ship type and a ship',
   (method, result) => {
-    expect(shipObject[method]()).toStrictEqual(result);
+    expect(ship[method]()).toStrictEqual(result);
   }
 );
