@@ -1,8 +1,10 @@
-import isStatus from '../../shipFactory/shipStatus';
+import isStatus from '../../ship/shipStatus';
 
 const locumObject = {
-  locumAnnihilated: { ship: ['--', '--', '--', '--', '--'] },
-  locumAlive: { ship: ['--', '--', '--', 'f4', 'f5'] }
+  locumAnnihilated: {
+    ship: ['[-][-]', '[-][-]', '[-][-]', '[-][-]', '[-][-]']
+  },
+  locumAlive: { ship: ['[-][-]', '[-][-]', '[-][-]', '[0][3]', '[0][4]'] }
 };
 const locumFunction = (object) => isStatus.call(object);
 

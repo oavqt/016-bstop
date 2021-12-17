@@ -3,7 +3,7 @@ function isHit(coords) {
   let result = 'coords not found';
 
   if (index >= 0) {
-    this.ship[index] = '--';
+    this.ship[index] = '[-][-]';
     result = 'success';
   }
 

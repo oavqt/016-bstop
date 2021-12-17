@@ -1,39 +1,39 @@
-import ship from '../../shipFactory/shipObject';
+import ship from '../../ship/shipObject';
 
 const cases = [
   [
     'carrier',
     {
       type: 'Carrier',
-      ship: ['ln', 'ln', 'ln', 'ln', 'ln']
+      ship: ['[][]', '[][]', '[][]', '[][]', '[][]']
     }
   ],
   [
     'battleship',
     {
       type: 'Battleship',
-      ship: ['ln', 'ln', 'ln', 'ln']
+      ship: ['[][]', '[][]', '[][]', '[][]']
     }
   ],
   [
     'destroyer',
     {
       type: 'Destroyer',
-      ship: ['ln', 'ln', 'ln']
+      ship: ['[][]', '[][]', '[][]']
     }
   ],
   [
     'submarine',
     {
       type: 'Submarine',
-      ship: ['ln', 'ln', 'ln']
+      ship: ['[][]', '[][]', '[][]']
     }
   ],
   [
     'patrol',
     {
       type: 'Patrol Boat',
-      ship: ['ln', 'ln']
+      ship: ['[][]', '[][]']
     }
   ]
 ];

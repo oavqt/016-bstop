@@ -1,20 +1,20 @@
-import build from '../../shipFactory/shipBuild';
-import isHit from '../../shipFactory/shipHit';
-import isStatus from '../../shipFactory/shipStatus';
+import build from '../../ship/shipBuild';
+import isHit from '../../ship/shipHit';
+import isStatus from '../../ship/shipStatus';
 
 const locumBattleship = {
   type: 'Battleship',
-  ship: ['ln', 'ln', 'ln', 'ln']
+  ship: ['[][]', '[][]', '[][]', '[][]']
 };
 
 const locumDestroyer = {
   type: 'Destroyer',
-  ship: ['ln', 'ln', 'ln']
+  ship: ['[][]', '[][]', '[][]']
 };
 
 const locumCarrier = {
   type: 'Carrier',
-  ship: ['ln', 'ln', 'ln', 'ln', 'ln']
+  ship: ['[][]', '[][]', '[][]', '[][]', '[][]']
 };
 
 const locumPrototype = {
@@ -25,16 +25,20 @@ const locumPrototype = {
 const locumFunction = () => 'Cyberpunk 2077';
 
 const locumObject = {
-  locumAnnihilated: { ship: ['--', '--', '--', '--', '--'] },
-  locumAlive: { ship: ['--', '--', '--', 'f4', 'f5'] },
+  locumAnnihilated: {
+    ship: ['[-][-]', '[-][-]', '[-][-]', '[-][-]', '[-][-]']
+  },
+  locumAlive: { ship: ['[-][-]', '[-][-]', '[-][-]', '[0][3]', '[0][4]'] },
   locumFunction
 };
 
 const locumCustomPrototype = {
   isHit,
   isStatus,
-  locumAnnihilated: { ship: ['--', '--', '--', '--', '--'] },
-  locumAlive: { ship: ['--', '--', '--', 'f4', 'f5'] },
+  locumAnnihilated: {
+    ship: ['[-][-]', '[-][-]', '[-][-]', '[-][-]', '[-][-]']
+  },
+  locumAlive: { ship: ['[-][-]', '[-][-]', '[-][-]', '[0][3]', '[0][4]'] },
   locumFunction
 };
 
