@@ -1,31 +1,36 @@
 const ship = {
-  carrier: () => {
+  carrier: (options) => {
     return {
       type: 'Carrier',
+      options: { ...options },
       ship: ['[][]', '[][]', '[][]', '[][]', '[][]']
     };
   },
-  battleship: () => {
+  battleship: (options) => {
     return {
       type: 'Battleship',
+      options: { ...options },
       ship: ['[][]', '[][]', '[][]', '[][]']
     };
   },
-  destroyer: () => {
+  destroyer: (options) => {
     return {
       type: 'Destroyer',
+      options: { ...options },
       ship: ['[][]', '[][]', '[][]']
     };
   },
-  submarine: () => {
+  submarine: (options) => {
     return {
       type: 'Submarine',
+      options: { ...options },
       ship: ['[][]', '[][]', '[][]']
     };
   },
-  patrol: () => {
+  patrol: (options) => {
     return {
       type: 'Patrol Boat',
+      options: { ...options },
       ship: ['[][]', '[][]']
     };
   }

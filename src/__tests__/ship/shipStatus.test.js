@@ -1,17 +1,17 @@
 import isStatus from '../../ship/shipStatus';
 
-const locumObject = {
-  locumAnnihilated: {
+const testObject = {
+  testAnnihilated: {
     ship: ['[-][-]', '[-][-]', '[-][-]', '[-][-]', '[-][-]']
   },
-  locumAlive: { ship: ['[-][-]', '[-][-]', '[-][-]', '[0][3]', '[0][4]'] }
+  testAlive: { ship: ['[-][-]', '[-][-]', '[-][-]', '[0][3]', '[0][4]'] }
 };
-const locumFunction = (object) => isStatus.call(object);
+const testCallFunction = (object) => isStatus.call(object);
 
-test('true, ship should be annihilated', () => {
-  expect(locumFunction(locumObject.locumAnnihilated)).toBe(true);
+test('true, return annihilated', () => {
+  expect(testCallFunction(testObject.testAnnihilated)).toBe(true);
 });
 
-test('false, ship should be alive', () => {
-  expect(locumFunction(locumObject.locumAlive)).toBe(false);
+test('false, return alive', () => {
+  expect(testCallFunction(testObject.testAlive)).toBe(false);
 });

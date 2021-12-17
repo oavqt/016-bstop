@@ -2,60 +2,63 @@ import build from '../../ship/shipBuild';
 import isHit from '../../ship/shipHit';
 import isStatus from '../../ship/shipStatus';
 
-const locumBattleship = {
+const testBattleship = {
   type: 'Battleship',
+  options: {},
   ship: ['[][]', '[][]', '[][]', '[][]']
 };
 
-const locumDestroyer = {
+const testDestroyer = {
   type: 'Destroyer',
+  options: {},
   ship: ['[][]', '[][]', '[][]']
 };
 
-const locumCarrier = {
+const testCarrier = {
   type: 'Carrier',
+  options: {},
   ship: ['[][]', '[][]', '[][]', '[][]', '[][]']
 };
 
-const locumPrototype = {
+const testPrototype = {
   isHit,
   isStatus
 };
 
-const locumFunction = () => 'Cyberpunk 2077';
+const testPropertyFunction = () => 'Dark Souls';
 
-const locumObject = {
-  locumAnnihilated: {
+const testOptions = {
+  testAnnihilated: {
     ship: ['[-][-]', '[-][-]', '[-][-]', '[-][-]', '[-][-]']
   },
-  locumAlive: { ship: ['[-][-]', '[-][-]', '[-][-]', '[0][3]', '[0][4]'] },
-  locumFunction
+  testAlive: { ship: ['[-][-]', '[-][-]', '[-][-]', '[0][3]', '[0][4]'] },
+  testPropertyFunction
 };
 
-const locumCustomPrototype = {
+const testCustomPrototype = {
   isHit,
   isStatus,
-  locumAnnihilated: {
+  testAnnihilated: {
     ship: ['[-][-]', '[-][-]', '[-][-]', '[-][-]', '[-][-]']
   },
-  locumAlive: { ship: ['[-][-]', '[-][-]', '[-][-]', '[0][3]', '[0][4]'] },
-  locumFunction
+  testAlive: { ship: ['[-][-]', '[-][-]', '[-][-]', '[0][3]', '[0][4]'] },
+  testPropertyFunction
 };
 
-test('should return default(battleship) with default(isHit, isStatus) prototype', () => {
+test('return default(battleship) with a default(isHit, isStatus) prototype', () => {
   const battleship = build();
-  expect(battleship).toStrictEqual(locumBattleship);
-  expect(Object.getPrototypeOf(battleship)).toStrictEqual(locumPrototype);
+  expect(battleship).toStrictEqual(testBattleship);
+  expect(Object.getPrototypeOf(battleship)).toStrictEqual(testPrototype);
 });
 
-test('should return destroyer with default(isHit, isStatus) prototype', () => {
+test('return destroyer with a default(isHit, isStatus) prototype', () => {
   const destroyer = build('destroyer');
-  expect(destroyer).toStrictEqual(locumDestroyer);
-  expect(Object.getPrototypeOf(destroyer)).toStrictEqual(locumPrototype);
+  expect(destroyer).toStrictEqual(testDestroyer);
+  expect(Object.getPrototypeOf(destroyer)).toStrictEqual(testPrototype);
 });
 
-test('should return carrier with custom prototype', () => {
-  const carrier = build('carrier', locumObject);
-  expect(carrier).toStrictEqual(locumCarrier);
-  expect(Object.getPrototypeOf(carrier)).toStrictEqual(locumCustomPrototype);
+test('return carrier with a custom prototype passed in as an object', () => {
+  const carrier = build('carrier', testOptions);
+  expect(carrier).toStrictEqual(testCarrier);
+  expect(Object.getPrototypeOf(carrier)).toStrictEqual(testCustomPrototype);
 });

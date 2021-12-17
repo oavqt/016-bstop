@@ -1,13 +1,13 @@
 import isHit from '../../ship/shipHit';
 
-const locumObject = {
-  locumAlive: { ship: ['[0][0]', '[0][1]', '[0][2]', '[0][3]', '[0][4]'] }
+const testShip = {
+  testAlive: { ship: ['[0][0]', '[0][1]', '[0][2]', '[0][3]', '[0][4]'] }
 };
-const locumFunction = (coords) => isHit.call(locumObject.locumAlive, coords);
+const testCallFunction = (coords) => isHit.call(testShip.testAlive, coords);
 
 test('compare values and replace with a hit marker', () => {
-  locumFunction('[0][3]');
-  expect(locumObject.locumAlive.ship).toStrictEqual([
+  testCallFunction('[0][3]');
+  expect(testShip.testAlive.ship).toStrictEqual([
     '[0][0]',
     '[0][1]',
     '[0][2]',
@@ -17,8 +17,8 @@ test('compare values and replace with a hit marker', () => {
 });
 
 test('compare values and replace with a hit marker', () => {
-  locumFunction('[0][0]');
-  expect(locumObject.locumAlive.ship).toStrictEqual([
+  testCallFunction('[0][0]');
+  expect(testShip.testAlive.ship).toStrictEqual([
     '[-][-]',
     '[0][1]',
     '[0][2]',
@@ -28,9 +28,9 @@ test('compare values and replace with a hit marker', () => {
 });
 
 test('parameter not found on this.ship', () => {
-  expect(locumFunction('[0][1][2]')).toBe('coords not found');
+  expect(testCallFunction('[0][1][2]')).toBe('coords not found');
 });
 
 test('parameter found on this.ship', () => {
-  expect(locumFunction('[0][2]')).toBe('success');
+  expect(testCallFunction('[0][2]')).toBe('success');
 });

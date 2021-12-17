@@ -5,6 +5,7 @@ const cases = [
     'carrier',
     {
       type: 'Carrier',
+      options: {},
       ship: ['[][]', '[][]', '[][]', '[][]', '[][]']
     }
   ],
@@ -12,6 +13,7 @@ const cases = [
     'battleship',
     {
       type: 'Battleship',
+      options: {},
       ship: ['[][]', '[][]', '[][]', '[][]']
     }
   ],
@@ -19,6 +21,7 @@ const cases = [
     'destroyer',
     {
       type: 'Destroyer',
+      options: {},
       ship: ['[][]', '[][]', '[][]']
     }
   ],
@@ -26,6 +29,7 @@ const cases = [
     'submarine',
     {
       type: 'Submarine',
+      options: {},
       ship: ['[][]', '[][]', '[][]']
     }
   ],
@@ -33,14 +37,26 @@ const cases = [
     'patrol',
     {
       type: 'Patrol Boat',
+      options: {},
       ship: ['[][]', '[][]']
     }
   ]
 ];
+const testPropertyFunction = () => 'Dark Souls';
+
+const testOptions = {
+  anime: 'One Piece',
+  movie: 'Harry Potter',
+  testPropertyFunction
+};
+
+test.each(cases)('return a ship object', (method, result) => {
+  expect(ship[method]()).toStrictEqual(result);
+});
 
 test.each(cases)(
-  'return an object consisting of a ship type and a ship',
-  (method, result) => {
-    expect(ship[method]()).toStrictEqual(result);
+  'return a ship object with custom properties passed in as an object',
+  (method) => {
+    expect(ship[method](testOptions).options).toMatchObject(testOptions);
   }
 );
