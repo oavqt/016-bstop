@@ -2,19 +2,19 @@ import cell from '../../gameboard/boardCell';
 
 const testCell = {
   coords: { cell: null, display: null },
-  options: {},
   state: {
     active: true,
     empty: true,
     selected: false,
     status: { hit: false, missed: false }
   },
-  vessel: null
+  vessel: null,
+  custom: {}
 };
 
 const testPropertyFunction = () => 'Dark Souls';
 
-const testOptions = {
+const testProperties = {
   anime: 'One Piece',
   movie: 'Harry Potter',
   testPropertyFunction
@@ -22,18 +22,18 @@ const testOptions = {
 
 const testCustomCell = {
   coords: { cell: null, display: null },
-  options: {
-    anime: 'One Piece',
-    movie: 'Harry Potter',
-    testPropertyFunction
-  },
   state: {
     active: true,
     empty: true,
     selected: false,
     status: { hit: false, missed: false }
   },
-  vessel: null
+  vessel: null,
+  custom: {
+    anime: 'One Piece',
+    movie: 'Harry Potter',
+    testPropertyFunction
+  }
 };
 
 test('return a cell object', () => {
@@ -41,5 +41,5 @@ test('return a cell object', () => {
 });
 
 test('return a cell object with custom properties passed in as an object', () => {
-  expect(cell(testOptions)).toStrictEqual(testCustomCell);
+  expect(cell(testProperties)).toStrictEqual(testCustomCell);
 });

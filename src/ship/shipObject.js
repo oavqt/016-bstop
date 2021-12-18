@@ -1,37 +1,37 @@
 const ship = {
-  carrier: (options) => {
+  carrier: (shipProperties) => {
     return {
       type: 'Carrier',
-      options: { ...options },
-      ship: ['[][]', '[][]', '[][]', '[][]', '[][]']
+      ship: ['[][]', '[][]', '[][]', '[][]', '[][]'],
+      custom: { ...shipProperties }
     };
   },
-  battleship: (options) => {
+  battleship: (shipProperties) => {
     return {
       type: 'Battleship',
-      options: { ...options },
-      ship: ['[][]', '[][]', '[][]', '[][]']
+      ship: ['[][]', '[][]', '[][]', '[][]'],
+      custom: { ...shipProperties }
     };
   },
-  destroyer: (options) => {
+  destroyer: (shipProperties) => {
     return {
       type: 'Destroyer',
-      options: { ...options },
-      ship: ['[][]', '[][]', '[][]']
+      ship: ['[][]', '[][]', '[][]'],
+      custom: { ...shipProperties }
     };
   },
-  submarine: (options) => {
+  submarine: (shipProperties) => {
     return {
       type: 'Submarine',
-      options: { ...options },
-      ship: ['[][]', '[][]', '[][]']
+      ship: ['[][]', '[][]', '[][]'],
+      custom: { ...shipProperties }
     };
   },
-  patrol: (options) => {
+  patrol: (shipProperties) => {
     return {
       type: 'Patrol Boat',
-      options: { ...options },
-      ship: ['[][]', '[][]']
+      ship: ['[][]', '[][]'],
+      custom: { ...shipProperties }
     };
   }
 };

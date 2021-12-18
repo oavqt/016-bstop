@@ -2,11 +2,15 @@ import ship from './shipObject';
 import isHit from './shipHit';
 import isStatus from './shipStatus';
 
-const build = (type = 'battleship', options = '') => {
-  const base = ship[type]();
-  const settings = { isHit, isStatus, ...options };
+const build = (
+  type = 'battleship',
+  protoProperties = '',
+  shipProperties = ''
+) => {
+  const base = ship[type](shipProperties);
+  const customProtoProperties = { isHit, isStatus, ...protoProperties };
 
-  return Object.assign(Object.create(settings), base);
+  return Object.assign(Object.create(customProtoProperties), base);
 };
 
 export default build;

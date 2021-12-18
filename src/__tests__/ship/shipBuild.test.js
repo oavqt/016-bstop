@@ -4,20 +4,20 @@ import isStatus from '../../ship/shipStatus';
 
 const testBattleship = {
   type: 'Battleship',
-  options: {},
-  ship: ['[][]', '[][]', '[][]', '[][]']
+  ship: ['[][]', '[][]', '[][]', '[][]'],
+  custom: {}
 };
 
 const testDestroyer = {
   type: 'Destroyer',
-  options: {},
-  ship: ['[][]', '[][]', '[][]']
+  ship: ['[][]', '[][]', '[][]'],
+  custom: {}
 };
 
 const testCarrier = {
   type: 'Carrier',
-  options: {},
-  ship: ['[][]', '[][]', '[][]', '[][]', '[][]']
+  ship: ['[][]', '[][]', '[][]', '[][]', '[][]'],
+  custom: {}
 };
 
 const testPrototype = {
@@ -27,7 +27,7 @@ const testPrototype = {
 
 const testPropertyFunction = () => 'Dark Souls';
 
-const testOptions = {
+const testProperties = {
   testAnnihilated: {
     ship: ['[-][-]', '[-][-]', '[-][-]', '[-][-]', '[-][-]']
   },
@@ -58,7 +58,7 @@ test('return destroyer with a default(isHit, isStatus) prototype', () => {
 });
 
 test('return carrier with a custom prototype passed in as an object', () => {
-  const carrier = build('carrier', testOptions);
+  const carrier = build('carrier', testProperties);
   expect(carrier).toStrictEqual(testCarrier);
   expect(Object.getPrototypeOf(carrier)).toStrictEqual(testCustomPrototype);
 });

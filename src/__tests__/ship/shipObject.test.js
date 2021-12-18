@@ -1,62 +1,62 @@
 import ship from '../../ship/shipObject';
 
-const cases = [
+const testShip = [
   [
     'carrier',
     {
       type: 'Carrier',
-      options: {},
-      ship: ['[][]', '[][]', '[][]', '[][]', '[][]']
+      ship: ['[][]', '[][]', '[][]', '[][]', '[][]'],
+      custom: {}
     }
   ],
   [
     'battleship',
     {
       type: 'Battleship',
-      options: {},
-      ship: ['[][]', '[][]', '[][]', '[][]']
+      ship: ['[][]', '[][]', '[][]', '[][]'],
+      custom: {}
     }
   ],
   [
     'destroyer',
     {
       type: 'Destroyer',
-      options: {},
-      ship: ['[][]', '[][]', '[][]']
+      ship: ['[][]', '[][]', '[][]'],
+      custom: {}
     }
   ],
   [
     'submarine',
     {
       type: 'Submarine',
-      options: {},
-      ship: ['[][]', '[][]', '[][]']
+      ship: ['[][]', '[][]', '[][]'],
+      custom: {}
     }
   ],
   [
     'patrol',
     {
       type: 'Patrol Boat',
-      options: {},
-      ship: ['[][]', '[][]']
+      ship: ['[][]', '[][]'],
+      custom: {}
     }
   ]
 ];
 const testPropertyFunction = () => 'Dark Souls';
 
-const testOptions = {
+const testProperties = {
   anime: 'One Piece',
   movie: 'Harry Potter',
   testPropertyFunction
 };
 
-test.each(cases)('return a ship object', (method, result) => {
+test.each(testShip)('return a ship object', (method, result) => {
   expect(ship[method]()).toStrictEqual(result);
 });
 
-test.each(cases)(
+test.each(testShip)(
   'return a ship object with custom properties passed in as an object',
   (method) => {
-    expect(ship[method](testOptions).options).toMatchObject(testOptions);
+    expect(ship[method](testProperties).custom).toMatchObject(testProperties);
   }
 );

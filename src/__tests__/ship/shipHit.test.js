@@ -14,9 +14,6 @@ test('compare values and replace with a hit marker', () => {
     '[-][-]',
     '[0][4]'
   ]);
-});
-
-test('compare values and replace with a hit marker', () => {
   testCallFunction('[0][0]');
   expect(testShip.testAlive.ship).toStrictEqual([
     '[-][-]',
