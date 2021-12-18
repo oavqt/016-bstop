@@ -2,6 +2,12 @@ import build from '../../ship/shipBuild';
 import isHit from '../../ship/shipHit';
 import isStatus from '../../ship/shipStatus';
 
+const testCarrier = {
+  type: 'Carrier',
+  ship: ['[][]', '[][]', '[][]', '[][]', '[][]'],
+  custom: {}
+};
+
 const testBattleship = {
   type: 'Battleship',
   ship: ['[][]', '[][]', '[][]', '[][]'],
@@ -11,12 +17,6 @@ const testBattleship = {
 const testDestroyer = {
   type: 'Destroyer',
   ship: ['[][]', '[][]', '[][]'],
-  custom: {}
-};
-
-const testCarrier = {
-  type: 'Carrier',
-  ship: ['[][]', '[][]', '[][]', '[][]', '[][]'],
   custom: {}
 };
 

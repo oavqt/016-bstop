@@ -1,8 +1,8 @@
 import cell from './boardCell';
 
-const row = (propertyName, rowProperties = '', cellProperties = '') => {
+const row = (identifier, rowProperties = '', cellProperties = '') => {
   const object = {
-    [propertyName]: {},
+    [identifier]: {},
     state: {
       active: true,
       empty: true
@@ -11,7 +11,7 @@ const row = (propertyName, rowProperties = '', cellProperties = '') => {
   };
 
   for (let i = 0; i < 10; i += 1) {
-    object[propertyName][i] = cell(cellProperties);
+    object[identifier][i] = cell(cellProperties);
   }
 
   return object;

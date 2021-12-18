@@ -2,15 +2,6 @@ import row from '../../gameboard/boardRow';
 
 const testPropertyName = 'a';
 
-const testRow = {
-  [testPropertyName]: {},
-  state: {
-    active: true,
-    empty: true
-  },
-  custom: {}
-};
-
 const testCell = {
   coords: { cell: null, display: null },
   state: {
@@ -20,6 +11,15 @@ const testCell = {
     status: { hit: false, missed: false }
   },
   vessel: null,
+  custom: {}
+};
+
+const testRow = {
+  [testPropertyName]: {},
+  state: {
+    active: true,
+    empty: true
+  },
   custom: {}
 };
 
