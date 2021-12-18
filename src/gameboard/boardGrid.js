@@ -1,7 +1,6 @@
 import row from './boardRow';
 
-const grid = (gridProperties, rowProperties, cellProperties) => {
-  const identifier = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
+const grid = (gridProperties, cellProperties) => {
   const object = {
     board: [],
     properties: {
@@ -28,9 +27,9 @@ const grid = (gridProperties, rowProperties, cellProperties) => {
     }
   };
 
-  identifier.map((letter) =>
-    object.board.push(row(letter, rowProperties, cellProperties))
-  );
+  for (let i = 0; i < 10; i += 1) {
+    object.board.push(row(cellProperties));
+  }
 
   return object;
 };

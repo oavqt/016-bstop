@@ -1,20 +1,13 @@
 import cell from './boardCell';
 
-const row = (identifier, rowProperties = '', cellProperties = '') => {
-  const object = {
-    [identifier]: {},
-    state: {
-      active: true,
-      empty: true
-    },
-    custom: { ...rowProperties }
-  };
+const row = (cellProperties = '') => {
+  const array = [];
 
   for (let i = 0; i < 10; i += 1) {
-    object[identifier][i] = cell(cellProperties);
+    array.push(cell(cellProperties));
   }
 
-  return object;
+  return array;
 };
 
 export default row;

@@ -44,15 +44,3 @@ test('return board property', () => {
 test('return board array with a lenght of 10', () => {
   expect(grid().board).toHaveLength(10);
 });
-
-test('return board array with 10 objects with properties a-k', () => {
-  const testKeysArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
-
-  expect(
-    grid().board.map((object) => {
-      const [property] = Object.keys(object);
-
-      return property;
-    })
-  ).toStrictEqual(testKeysArray);
-});
