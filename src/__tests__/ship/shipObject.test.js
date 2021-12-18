@@ -1,6 +1,6 @@
-import ship from '../../ship/shipObject';
+import shipObject from '../../ship/shipObject';
 
-const testShip = [
+const testShipObject = [
   [
     'carrier',
     {
@@ -42,21 +42,23 @@ const testShip = [
     }
   ]
 ];
-const testPropertyFunction = () => 'Dark Souls';
+const testShipPropertyFunction = () => 'Dark Souls';
 
-const testProperties = {
+const testShipProperties = {
   anime: 'One Piece',
   movie: 'Harry Potter',
-  testPropertyFunction
+  testShipPropertyFunction
 };
 
-test.each(testShip)('return a ship object', (method, result) => {
-  expect(ship[method]()).toStrictEqual(result);
+test.each(testShipObject)('return a ship object', (method, result) => {
+  expect(shipObject[method]()).toStrictEqual(result);
 });
 
-test.each(testShip)(
+test.each(testShipObject)(
   'return a ship object with custom properties passed in as an object',
   (method) => {
-    expect(ship[method](testProperties).custom).toMatchObject(testProperties);
+    expect(shipObject[method](testShipProperties).custom).toMatchObject(
+      testShipProperties
+    );
   }
 );

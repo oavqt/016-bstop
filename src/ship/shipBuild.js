@@ -1,16 +1,20 @@
-import ship from './shipObject';
-import isHit from './shipHit';
-import isStatus from './shipStatus';
+import shipObject from './shipObject';
+import shipIsHit from './shipHit';
+import shipIsStatus from './shipStatus';
 
-const build = (
+const shipBuild = (
   type = 'battleship',
-  protoProperties = '',
-  shipProperties = ''
+  shipProperties = '',
+  shipProtoProperties = ''
 ) => {
-  const base = ship[type](shipProperties);
-  const customProtoProperties = { isHit, isStatus, ...protoProperties };
+  const base = shipObject[type](shipProperties);
+  const customProtoProperties = {
+    shipIsHit,
+    shipIsStatus,
+    ...shipProtoProperties
+  };
 
   return Object.assign(Object.create(customProtoProperties), base);
 };
 
-export default build;
+export default shipBuild;

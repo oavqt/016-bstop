@@ -1,6 +1,6 @@
-import grid from '../../gameboard/boardGrid';
+import gridObject from '../../gameboard/boardGridObject';
 
-const testGrid = {
+const testGridObject = {
   status: {
     active: false,
     completed: false,
@@ -21,26 +21,28 @@ const testGrid = {
   custom: {}
 };
 
-const testPropertyFunction = () => 'Dark Souls';
+const testGridPropertyFunction = () => 'Dark Souls';
 
-const testProperties = {
+const testGridProperties = {
   anime: 'One Piece',
   movie: 'Harry Potter',
-  testPropertyFunction
+  testGridPropertyFunction
 };
 
 test('return object with property (properties) that contains (status, stats, ships, and custom) properties', () => {
-  expect(grid().properties).toStrictEqual(testGrid);
+  expect(gridObject().properties).toStrictEqual(testGridObject);
 });
 
 test('return object containing the custom properties passed in as an object', () => {
-  expect(grid(testProperties).properties.custom).toMatchObject(testProperties);
+  expect(gridObject(testGridProperties).properties.custom).toMatchObject(
+    testGridProperties
+  );
 });
 
 test('return board property', () => {
-  expect(Object.keys(grid())).toContain('board');
+  expect(Object.keys(gridObject())).toContain('board');
 });
 
 test('return board array with a lenght of 10', () => {
-  expect(grid().board).toHaveLength(10);
+  expect(gridObject().board).toHaveLength(10);
 });

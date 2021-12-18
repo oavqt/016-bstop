@@ -1,13 +1,14 @@
-import isHit from '../../ship/shipHit';
+import shipIsHit from '../../ship/shipHit';
 
-const testShip = {
+const testShipObject = {
   testAlive: { ship: ['[0][0]', '[0][1]', '[0][2]', '[0][3]', '[0][4]'] }
 };
-const testCallFunction = (coords) => isHit.call(testShip.testAlive, coords);
+const testCallFunction = (coords) =>
+  shipIsHit.call(testShipObject.testAlive, coords);
 
 test('compare values and replace with a hit marker', () => {
   testCallFunction('[0][3]');
-  expect(testShip.testAlive.ship).toStrictEqual([
+  expect(testShipObject.testAlive.ship).toStrictEqual([
     '[0][0]',
     '[0][1]',
     '[0][2]',
@@ -15,7 +16,7 @@ test('compare values and replace with a hit marker', () => {
     '[0][4]'
   ]);
   testCallFunction('[0][0]');
-  expect(testShip.testAlive.ship).toStrictEqual([
+  expect(testShipObject.testAlive.ship).toStrictEqual([
     '[-][-]',
     '[0][1]',
     '[0][2]',

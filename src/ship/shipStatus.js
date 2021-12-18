@@ -1,5 +1,5 @@
-function isStatus() {
+function shipIsStatus() {
   return this.ship.every((item) => item === '[-][-]');
 }
 
-export default isStatus;
+export default shipIsStatus;

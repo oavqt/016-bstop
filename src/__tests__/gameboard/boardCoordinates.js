@@ -1,6 +1,6 @@
 import coordinates from '../../gameboard/boardCoordinates';
 
-const testBoard = [
+const testBoardArray = [
   [
     { coords: { cell: null, display: null } },
     { coords: { cell: null, display: null } },
@@ -18,7 +18,7 @@ const testBoard = [
   ]
 ];
 
-const testBoardCoordinate = [
+const testBoardArrayCoordinate = [
   [
     { coords: { cell: '[0][0]', display: '[a][0]' } },
     { coords: { cell: '[0][1]', display: '[a][1]' } },
@@ -37,5 +37,5 @@ const testBoardCoordinate = [
 ];
 
 test('return a modified array(testBoard) matching the testBoardCoordinate', () => {
-  expect(coordinates(testBoard)).toStrictEqual(testBoardCoordinate);
+  expect(coordinates(testBoardArray)).toStrictEqual(testBoardArrayCoordinate);
 });

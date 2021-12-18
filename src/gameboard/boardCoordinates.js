@@ -1,8 +1,8 @@
-const coordinates = (board) => {
+const boardCoordinates = (boardArray) => {
   const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
 
-  board.map((row) => {
-    const first = board.indexOf(row);
+  boardArray.map((row) => {
+    const first = boardArray.indexOf(row);
 
     return row.map((cell) => {
       const second = row.indexOf(cell);
@@ -15,7 +15,7 @@ const coordinates = (board) => {
     });
   });
 
-  return board;
+  return boardArray;
 };
 
-export default coordinates;
+export default boardCoordinates;

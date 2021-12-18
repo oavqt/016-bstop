@@ -1,4 +1,4 @@
-const ship = {
+const shipObject = {
   carrier: (shipProperties) => {
     return {
       type: 'Carrier',
@@ -36,4 +36,4 @@ const ship = {
   }
 };
 
-export default ship;
+export default shipObject;

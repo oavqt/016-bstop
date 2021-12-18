@@ -1,64 +1,64 @@
-import build from '../../ship/shipBuild';
-import isHit from '../../ship/shipHit';
-import isStatus from '../../ship/shipStatus';
+import shipBuild from '../../ship/shipBuild';
+import shipIsHit from '../../ship/shipHit';
+import shipIsStatus from '../../ship/shipStatus';
 
-const testCarrier = {
+const testCarrierObject = {
   type: 'Carrier',
   ship: ['[][]', '[][]', '[][]', '[][]', '[][]'],
   custom: {}
 };
 
-const testBattleship = {
+const testBattleshipObject = {
   type: 'Battleship',
   ship: ['[][]', '[][]', '[][]', '[][]'],
   custom: {}
 };
 
-const testDestroyer = {
+const testDestroyerObject = {
   type: 'Destroyer',
   ship: ['[][]', '[][]', '[][]'],
   custom: {}
 };
 
-const testPrototype = {
-  isHit,
-  isStatus
+const testShipPrototype = {
+  shipIsHit,
+  shipIsStatus
 };
 
-const testPropertyFunction = () => 'Dark Souls';
+const testShipPropertyFunction = () => 'Dark Souls';
 
-const testProperties = {
+const testShipProperties = {
   testAnnihilated: {
     ship: ['[-][-]', '[-][-]', '[-][-]', '[-][-]', '[-][-]']
   },
   testAlive: { ship: ['[-][-]', '[-][-]', '[-][-]', '[0][3]', '[0][4]'] },
-  testPropertyFunction
+  testShipPropertyFunction
 };
 
-const testCustomPrototype = {
-  isHit,
-  isStatus,
+const testShipCustomPrototype = {
+  shipIsHit,
+  shipIsStatus,
   testAnnihilated: {
     ship: ['[-][-]', '[-][-]', '[-][-]', '[-][-]', '[-][-]']
   },
   testAlive: { ship: ['[-][-]', '[-][-]', '[-][-]', '[0][3]', '[0][4]'] },
-  testPropertyFunction
+  testShipPropertyFunction
 };
 
 test('return default(battleship) with a default(isHit, isStatus) prototype', () => {
-  const battleship = build();
-  expect(battleship).toStrictEqual(testBattleship);
-  expect(Object.getPrototypeOf(battleship)).toStrictEqual(testPrototype);
+  const battleship = shipBuild();
+  expect(battleship).toStrictEqual(testBattleshipObject);
+  expect(Object.getPrototypeOf(battleship)).toStrictEqual(testShipPrototype);
 });
 
 test('return destroyer with a default(isHit, isStatus) prototype', () => {
-  const destroyer = build('destroyer');
-  expect(destroyer).toStrictEqual(testDestroyer);
-  expect(Object.getPrototypeOf(destroyer)).toStrictEqual(testPrototype);
+  const destroyer = shipBuild('destroyer');
+  expect(destroyer).toStrictEqual(testDestroyerObject);
+  expect(Object.getPrototypeOf(destroyer)).toStrictEqual(testShipPrototype);
 });
 
 test('return carrier with a custom prototype passed in as an object', () => {
-  const carrier = build('carrier', testProperties);
-  expect(carrier).toStrictEqual(testCarrier);
-  expect(Object.getPrototypeOf(carrier)).toStrictEqual(testCustomPrototype);
+  const carrier = shipBuild('carrier', null, testShipProperties);
+  expect(carrier).toStrictEqual(testCarrierObject);
+  expect(Object.getPrototypeOf(carrier)).toStrictEqual(testShipCustomPrototype);
 });

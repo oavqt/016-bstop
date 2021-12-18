@@ -1,6 +1,6 @@
-import row from '../../gameboard/boardRow';
+import rowBuild from '../../gameboard/boardRow';
 
-const testCell = {
+const testCellObject = {
   coords: { cell: null, display: null },
   state: {
     active: true,
@@ -13,11 +13,11 @@ const testCell = {
 };
 
 test('return array with a length of 10', () => {
-  expect(row()).toHaveLength(10);
+  expect(rowBuild()).toHaveLength(10);
 });
 
 test('return array with a length of 10 containing 10 testCells', () => {
-  row().forEach((object) => {
-    expect(object).toStrictEqual(testCell);
+  rowBuild().forEach((object) => {
+    expect(object).toStrictEqual(testCellObject);
   });
 });

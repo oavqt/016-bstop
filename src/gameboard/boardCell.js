@@ -1,15 +1,11 @@
-const cell = (cellProperties = '') => {
-  return {
-    coords: { cell: null, display: null },
-    state: {
-      active: true,
-      empty: true,
-      selected: false,
-      status: { hit: false, missed: false }
-    },
-    vessel: null,
-    custom: { ...cellProperties }
-  };
+import cellObject from './boardCellObject';
+import cellPlace from './boardCellProto';
+
+const cellBuild = (cellProperties = '', cellProtoProperties = '') => {
+  const base = cellObject(cellProperties);
+  const customProtoProperties = { cellPlace, ...cellProtoProperties };
+
+  return Object.assign(Object.create(customProtoProperties), base);
 };
 
-export default cell;
+export default cellBuild;
