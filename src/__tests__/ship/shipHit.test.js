@@ -3,6 +3,7 @@ import shipIsHit from '../../ship/shipHit';
 const testShipObject = {
   testAlive: { ship: ['[0][0]', '[0][1]', '[0][2]', '[0][3]', '[0][4]'] }
 };
+
 const testCallFunction = (coords) =>
   shipIsHit.call(testShipObject.testAlive, coords);
 

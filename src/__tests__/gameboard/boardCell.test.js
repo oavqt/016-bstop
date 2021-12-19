@@ -1,10 +1,15 @@
 import cellBuild from '../../gameboard/boardCell';
-import cellPlace from '../../gameboard/boardCellProto';
 
-const testPrototype = {
-  cellPlace
+const testCellPropertyFunction = () => 'Dark Souls';
+
+const testCellCustomPrototype = {
+  anime: 'One Piece',
+  movie: 'Harry Potter',
+  testCellPropertyFunction
 };
 
-test('return default(cell) with a default(place) prototype', () => {
-  expect(Object.getPrototypeOf(cellBuild())).toStrictEqual(testPrototype);
+test('return default(cell) with a custom prototype', () => {
+  expect(
+    Object.getPrototypeOf(cellBuild(null, testCellCustomPrototype))
+  ).toStrictEqual(testCellCustomPrototype);
 });
