@@ -4,6 +4,7 @@ const testShipObject = [
   [
     'carrier',
     {
+      id: null,
       type: 'Carrier',
       ship: ['[][]', '[][]', '[][]', '[][]', '[][]'],
       custom: {}
@@ -12,6 +13,7 @@ const testShipObject = [
   [
     'battleship',
     {
+      id: null,
       type: 'Battleship',
       ship: ['[][]', '[][]', '[][]', '[][]'],
       custom: {}
@@ -20,6 +22,7 @@ const testShipObject = [
   [
     'destroyer',
     {
+      id: null,
       type: 'Destroyer',
       ship: ['[][]', '[][]', '[][]'],
       custom: {}
@@ -28,6 +31,7 @@ const testShipObject = [
   [
     'submarine',
     {
+      id: null,
       type: 'Submarine',
       ship: ['[][]', '[][]', '[][]'],
       custom: {}
@@ -36,17 +40,18 @@ const testShipObject = [
   [
     'patrol',
     {
+      id: null,
       type: 'Patrol Boat',
       ship: ['[][]', '[][]'],
       custom: {}
     }
   ]
 ];
-const testShipPropertyFunction = () => 'Dark Souls';
+const testShipPropertyFunction = () => 'dark souls';
 
 const testShipProperties = {
-  anime: 'One Piece',
-  movie: 'Harry Potter',
+  anime: 'one piece',
+  movie: 'harry potter',
   testShipPropertyFunction
 };
 

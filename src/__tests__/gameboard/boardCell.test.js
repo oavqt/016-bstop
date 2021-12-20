@@ -1,10 +1,10 @@
 import cellBuild from '../../gameboard/boardCell';
 
-const testCellPropertyFunction = () => 'Dark Souls';
+const testCellPropertyFunction = () => 'dark souls';
 
 const testCellCustomPrototype = {
-  anime: 'One Piece',
-  movie: 'Harry Potter',
+  anime: 'one piece',
+  movie: 'harry potter',
   testCellPropertyFunction
 };
 

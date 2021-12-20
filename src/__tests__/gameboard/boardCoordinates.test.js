@@ -1,4 +1,4 @@
-import coordinates from '../../gameboard/boardCoordinates';
+import boardCoordinates from '../../gameboard/boardCoordinates';
 
 const testBoardObject = {
   board: [
@@ -41,7 +41,7 @@ const testBoardObjectCoordinate = {
 };
 
 test('return a modified array(testBoard) matching the testBoardCoordinate', () => {
-  expect(coordinates(testBoardObject.board)).toStrictEqual(
-    testBoardObjectCoordinate.board
+  expect(boardCoordinates(testBoardObject)).toStrictEqual(
+    testBoardObjectCoordinate
   );
 });

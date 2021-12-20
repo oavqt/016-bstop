@@ -1,4 +1,4 @@
-import gridPlace from '../../gameboard/boardGridProtoFn';
+import gridPlace from '../../gameboard/boardGridPlace';
 
 const testBoardObject = {
   board: [

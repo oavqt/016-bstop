@@ -21,11 +21,11 @@ const testGridObject = {
   custom: {}
 };
 
-const testGridPropertyFunction = () => 'Dark Souls';
+const testGridPropertyFunction = () => 'dark souls';
 
 const testGridProperties = {
-  anime: 'One Piece',
-  movie: 'Harry Potter',
+  anime: 'one piece',
+  movie: 'harry potter',
   testGridPropertyFunction
 };
 

@@ -3,18 +3,21 @@ import shipIsHit from '../../ship/shipHit';
 import shipIsStatus from '../../ship/shipStatus';
 
 const testCarrierObject = {
+  id: null,
   type: 'Carrier',
   ship: ['[][]', '[][]', '[][]', '[][]', '[][]'],
   custom: {}
 };
 
 const testBattleshipObject = {
+  id: null,
   type: 'Battleship',
   ship: ['[][]', '[][]', '[][]', '[][]'],
   custom: {}
 };
 
 const testDestroyerObject = {
+  id: null,
   type: 'Destroyer',
   ship: ['[][]', '[][]', '[][]'],
   custom: {}
@@ -25,7 +28,7 @@ const testShipPrototype = {
   shipIsStatus
 };
 
-const testShipPropertyFunction = () => 'Dark Souls';
+const testShipPropertyFunction = () => 'dark souls';
 
 const testShipProperties = {
   testAnnihilated: {

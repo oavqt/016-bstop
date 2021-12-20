@@ -1,6 +1,7 @@
 const shipObject = {
   carrier: (shipProperties) => {
     return {
+      id: null,
       type: 'Carrier',
       ship: ['[][]', '[][]', '[][]', '[][]', '[][]'],
       custom: { ...shipProperties }
@@ -8,6 +9,7 @@ const shipObject = {
   },
   battleship: (shipProperties) => {
     return {
+      id: null,
       type: 'Battleship',
       ship: ['[][]', '[][]', '[][]', '[][]'],
       custom: { ...shipProperties }
@@ -15,6 +17,7 @@ const shipObject = {
   },
   destroyer: (shipProperties) => {
     return {
+      id: null,
       type: 'Destroyer',
       ship: ['[][]', '[][]', '[][]'],
       custom: { ...shipProperties }
@@ -22,6 +25,7 @@ const shipObject = {
   },
   submarine: (shipProperties) => {
     return {
+      id: null,
       type: 'Submarine',
       ship: ['[][]', '[][]', '[][]'],
       custom: { ...shipProperties }
@@ -29,6 +33,7 @@ const shipObject = {
   },
   patrol: (shipProperties) => {
     return {
+      id: null,
       type: 'Patrol Boat',
       ship: ['[][]', '[][]'],
       custom: { ...shipProperties }

@@ -12,11 +12,11 @@ const testCellObject = {
   custom: {}
 };
 
-const testCellPropertyFunction = () => 'Dark Souls';
+const testCellPropertyFunction = () => 'dark souls';
 
 const testCellProperties = {
-  anime: 'One Piece',
-  movie: 'Harry Potter',
+  anime: 'one piece',
+  movie: 'harry potter',
   testCellPropertyFunction
 };
 
@@ -30,8 +30,8 @@ const testCustomCellObject = {
   },
   vessel: null,
   custom: {
-    anime: 'One Piece',
-    movie: 'Harry Potter',
+    anime: 'one piece',
+    movie: 'harry potter',
     testCellPropertyFunction
   }
 };
