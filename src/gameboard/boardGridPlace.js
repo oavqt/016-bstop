@@ -1,3 +1,5 @@
+import pubsub from '../tools/pubsub';
+
 function gridPlace(coordsY, coordsX, shipObject, direction = 'left') {
   const shipLength = shipObject.ship.length;
 
@@ -23,6 +25,7 @@ function gridPlace(coordsY, coordsX, shipObject, direction = 'left') {
     property.vessel = shipObject;
   });
 
+  pubsub.publish('shipCoordinates', vessels);
   return true;
 }
 
