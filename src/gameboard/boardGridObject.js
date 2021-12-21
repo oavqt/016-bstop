@@ -6,19 +6,18 @@ const gridObject = (gridProperties, cellProperties) => {
     properties: {
       status: {
         active: false,
-        completed: false,
-        empty: true
+        completed: false
       },
       stats: {
         attempts: {
-          total: null,
-          hits: null,
-          misses: null
+          total: 0,
+          hits: 0,
+          misses: 0
         },
         ships: {
-          total: null,
-          alive: null,
-          destroyed: null
+          total: 0,
+          alive: 0,
+          destroyed: 0
         }
       },
       custom: {

@@ -25,7 +25,11 @@ function gridPlace(coordsY, coordsX, shipObject, direction = 'left') {
     property.vessel = shipObject;
   });
 
+  this.properties.stats.ships.alive += 1;
+  this.properties.stats.ships.total += 1;
+
   pubsub.publish('shipCoordinates', vessels);
+
   return true;
 }
 

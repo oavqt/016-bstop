@@ -2,12 +2,8 @@ import cellObject from '../../gameboard/boardCellObject';
 
 const testCellObject = {
   coords: { cell: null, display: null },
-  state: {
-    active: true,
-    empty: true,
-    selected: false,
-    status: { hit: false, missed: false }
-  },
+  selected: false,
+  status: { hit: false, missed: false },
   vessel: null,
   custom: {}
 };
@@ -22,12 +18,8 @@ const testCellProperties = {
 
 const testCustomCellObject = {
   coords: { cell: null, display: null },
-  state: {
-    active: true,
-    empty: true,
-    selected: false,
-    status: { hit: false, missed: false }
-  },
+  selected: false,
+  status: { hit: false, missed: false },
   vessel: null,
   custom: {
     anime: 'one piece',

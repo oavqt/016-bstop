@@ -2,12 +2,8 @@ import rowBuild from '../../gameboard/boardRow';
 
 const testCellObject = {
   coords: { cell: null, display: null },
-  state: {
-    active: true,
-    empty: true,
-    selected: false,
-    status: { hit: false, missed: false }
-  },
+  selected: false,
+  status: { hit: false, missed: false },
   vessel: null,
   custom: {}
 };
