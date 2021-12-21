@@ -32,18 +32,21 @@ const testBoardObject = {
 };
 
 const testCarrierObject = {
+  id: null,
   type: 'Carrier',
   ship: ['[][]', '[][]', '[][]', '[][]', '[][]'],
   custom: {}
 };
 
 const testBattleshipObject = {
+  id: null,
   type: 'Battleship',
   ship: ['[][]', '[][]', '[][]', '[][]'],
   custom: {}
 };
 
 const testDestroyerObject = {
+  id: null,
   type: 'Destroyer',
   ship: ['[][]', '[][]', '[][]'],
   custom: {}
