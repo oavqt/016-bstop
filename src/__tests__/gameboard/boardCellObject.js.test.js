@@ -1,10 +1,10 @@
-import cellObject from '../../gameboard/boardCellObject';
+import boardCellObject from '../../gameboard/boardCellObject';
 
 const testCellObject = {
   coords: { cell: null, display: null },
   selected: false,
   status: { hit: false, missed: false },
-  vessel: null,
+  ship: null,
   custom: {}
 };
 
@@ -20,7 +20,7 @@ const testCustomCellObject = {
   coords: { cell: null, display: null },
   selected: false,
   status: { hit: false, missed: false },
-  vessel: null,
+  ship: null,
   custom: {
     anime: 'one piece',
     movie: 'harry potter',
@@ -29,9 +29,11 @@ const testCustomCellObject = {
 };
 
 test('return a cell object', () => {
-  expect(cellObject()).toStrictEqual(testCellObject);
+  expect(boardCellObject()).toStrictEqual(testCellObject);
 });
 
 test('return a cell object with custom properties passed in as an object', () => {
-  expect(cellObject(testCellProperties)).toStrictEqual(testCustomCellObject);
+  expect(boardCellObject(testCellProperties)).toStrictEqual(
+    testCustomCellObject
+  );
 });

@@ -1,19 +1,19 @@
-import rowBuild from '../../gameboard/boardRow';
+import boardRowBuild from '../../gameboard/boardRow';
 
 const testCellObject = {
   coords: { cell: null, display: null },
   selected: false,
   status: { hit: false, missed: false },
-  vessel: null,
+  ship: null,
   custom: {}
 };
 
 test('return array with a length of 10', () => {
-  expect(rowBuild()).toHaveLength(10);
+  expect(boardRowBuild()).toHaveLength(10);
 });
 
 test('return array with a length of 10 containing 10 testCells', () => {
-  rowBuild().forEach((object) => {
+  boardRowBuild().forEach((object) => {
     expect(object).toStrictEqual(testCellObject);
   });
 });

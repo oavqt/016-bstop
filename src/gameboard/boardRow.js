@@ -1,13 +1,13 @@
-import cellBuild from './boardCell';
+import boardCellObjectBuild from './boardCellObjectBuild';
 
-const rowBuild = (cellProperties = '') => {
-  const array = [];
+const boardRowBuild = (boardCellObjectProperties = '') => {
+  const row = [];
 
   for (let i = 0; i < 10; i += 1) {
-    array.push(cellBuild(cellProperties));
+    row.push(boardCellObjectBuild(boardCellObjectProperties));
   }
 
-  return array;
+  return row;
 };
 
-export default rowBuild;
+export default boardRowBuild;

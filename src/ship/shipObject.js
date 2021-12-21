@@ -1,42 +1,42 @@
 const shipObject = {
-  carrier: (shipProperties) => {
+  carrier: (shipObjectProperties) => {
     return {
       id: null,
       type: 'Carrier',
-      ship: ['[][]', '[][]', '[][]', '[][]', '[][]'],
-      custom: { ...shipProperties }
+      layout: ['[][]', '[][]', '[][]', '[][]', '[][]'],
+      custom: { ...shipObjectProperties }
     };
   },
-  battleship: (shipProperties) => {
+  battleship: (shipObjectProperties) => {
     return {
       id: null,
       type: 'Battleship',
-      ship: ['[][]', '[][]', '[][]', '[][]'],
-      custom: { ...shipProperties }
+      layout: ['[][]', '[][]', '[][]', '[][]'],
+      custom: { ...shipObjectProperties }
     };
   },
-  destroyer: (shipProperties) => {
+  destroyer: (shipObjectProperties) => {
     return {
       id: null,
       type: 'Destroyer',
-      ship: ['[][]', '[][]', '[][]'],
-      custom: { ...shipProperties }
+      layout: ['[][]', '[][]', '[][]'],
+      custom: { ...shipObjectProperties }
     };
   },
-  submarine: (shipProperties) => {
+  submarine: (shipObjectProperties) => {
     return {
       id: null,
       type: 'Submarine',
-      ship: ['[][]', '[][]', '[][]'],
-      custom: { ...shipProperties }
+      layout: ['[][]', '[][]', '[][]'],
+      custom: { ...shipObjectProperties }
     };
   },
-  patrol: (shipProperties) => {
+  patrol: (shipObjectProperties) => {
     return {
       id: null,
       type: 'Patrol Boat',
-      ship: ['[][]', '[][]'],
-      custom: { ...shipProperties }
+      layout: ['[][]', '[][]'],
+      custom: { ...shipObjectProperties }
     };
   }
 };

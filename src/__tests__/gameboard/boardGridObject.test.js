@@ -1,4 +1,4 @@
-import gridObject from '../../gameboard/boardGridObject';
+import boardGridObject from '../../gameboard/boardGridObject';
 
 const testGridObject = {
   status: {
@@ -29,19 +29,19 @@ const testGridProperties = {
 };
 
 test('return object with property (properties) that contains (status, stats, ships, and custom) properties', () => {
-  expect(gridObject().properties).toStrictEqual(testGridObject);
+  expect(boardGridObject().properties).toStrictEqual(testGridObject);
 });
 
 test('return object containing the custom properties passed in as an object', () => {
-  expect(gridObject(testGridProperties).properties.custom).toMatchObject(
+  expect(boardGridObject(testGridProperties).properties.custom).toMatchObject(
     testGridProperties
   );
 });
 
 test('return board property', () => {
-  expect(Object.keys(gridObject())).toContain('board');
+  expect(Object.keys(boardGridObject())).toContain('board');
 });
 
 test('return board array with a lenght of 10', () => {
-  expect(gridObject().board).toHaveLength(10);
+  expect(boardGridObject().board).toHaveLength(10);
 });

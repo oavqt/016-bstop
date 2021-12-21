@@ -1,4 +1,4 @@
-import cellBuild from '../../gameboard/boardCell';
+import boardCellObjectBuild from '../../gameboard/boardCellObjectBuild';
 
 const testCellPropertyFunction = () => 'dark souls';
 
@@ -10,6 +10,6 @@ const testCellCustomPrototype = {
 
 test('return default(cell) with a custom prototype', () => {
   expect(
-    Object.getPrototypeOf(cellBuild(null, testCellCustomPrototype))
+    Object.getPrototypeOf(boardCellObjectBuild(null, testCellCustomPrototype))
   ).toStrictEqual(testCellCustomPrototype);
 });

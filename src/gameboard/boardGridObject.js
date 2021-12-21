@@ -1,6 +1,9 @@
-import rowBuild from './boardRow';
+import boardRowBuild from './boardRow';
 
-const gridObject = (gridProperties, cellProperties) => {
+const boardGridObject = (
+  boardGridObjectProperties,
+  boardCellObjectProperties
+) => {
   const object = {
     board: [],
     properties: {
@@ -21,16 +24,16 @@ const gridObject = (gridProperties, cellProperties) => {
         }
       },
       custom: {
-        ...gridProperties
+        ...boardGridObjectProperties
       }
     }
   };
 
   for (let i = 0; i < 10; i += 1) {
-    object.board.push(rowBuild(cellProperties));
+    object.board.push(boardRowBuild(boardCellObjectProperties));
   }
 
   return object;
 };
 
-export default gridObject;
+export default boardGridObject;

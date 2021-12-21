@@ -1,20 +1,20 @@
-function boardReceiveAttack(coordsY, coordsX) {
-  const cellObject = this.board[coordsY][coordsX];
+import pubsub from '../tools/pubsub';
+
+function boardReceiveAttack(boardObject, coordsY, coordsX) {
+  const boardCellObject = boardObject[coordsY][coordsX];
   const coords = `[${coordsY}][${coordsX}]`;
 
-  cellObject.selected = true;
+  boardCellObject.selected = true;
 
-  if (cellObject.vessel !== null) {
-    this.properties.stats.attempts.hits += 1;
-    this.properties.stats.attempts.total += 1;
+  if (boardCellObject.ship !== null) {
+    boardCellObject.status.hit = true;
 
-    cellObject.status.hit = true;
-    cellObject.vessel.shipIsHit(coords);
+    pubsub.publish('hit', boardCellObject, coords);
+    pubsub.publish('boardStatsAttempts', { total: 1, hits: 1, misses: 0 });
   } else {
-    this.properties.stats.attempts.misses += 1;
-    this.properties.stats.attempts.total += 1;
+    boardCellObject.status.missed = true;
 
-    cellObject.status.missed = true;
+    pubsub.publish('boardStatsAttempts', { total: 1, hits: 0, misses: 1 });
   }
 }
 

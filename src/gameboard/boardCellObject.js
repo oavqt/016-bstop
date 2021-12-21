@@ -1,11 +1,11 @@
-const cellObject = (cellProperties = '') => {
+const boardCellObject = (boardCellObjectProperties = '') => {
   return {
     coords: { cell: null, display: null },
     selected: false,
     status: { hit: false, missed: false },
-    vessel: null,
-    custom: { ...cellProperties }
+    ship: null,
+    custom: { ...boardCellObjectProperties }
   };
 };
 
-export default cellObject;
+export default boardCellObject;
