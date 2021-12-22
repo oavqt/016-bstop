@@ -1,17 +1,17 @@
 import pubsub from '../tools/pubsub';
 
-function shipObjectHit(shipObject, coords) {
-  const shipLayout = shipObject.layout;
-  const index = shipLayout.findIndex((value) => value === coords);
+function shipObjectHit(boardObject, coords) {
+  const [coordsY, coordsX] = coords;
 
-  let result = 'coords not found';
+  const boardCellObject = boardObject.board[coordsY][coordsX];
+  const shipObject = boardCellObject.ship;
+  const shipObjectLayout = shipObject.layout;
 
-  if (index >= 0) {
-    shipLayout[index] = '[-][-]';
-    result = 'success';
-  }
+  const index = shipObjectLayout.findIndex(
+    (value) => value === `[${coordsY}][${coordsX}]`
+  );
 
-  return result;
+  shipObjectLayout[index] = '[-][-]';
 }
 
 pubsub.subscribe('shipHit', shipObjectHit);

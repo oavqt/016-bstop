@@ -32,8 +32,7 @@ function boardGridObjectPlace(
   });
 
   pubsub.publish('shipObjectCoordinates', ships);
-  pubsub.publish('boardShipsAlive', true);
-  pubsub.publish('boardShipsTotal', true);
+  pubsub.publish('boardStatsUpdateShips', 1);
 
   return true;
 }

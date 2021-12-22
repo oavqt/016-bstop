@@ -19,8 +19,8 @@ const boardGridObject = (
         },
         ships: {
           total: 0,
-          alive: 0,
-          destroyed: 0
+          shipwrecked: 0,
+          standing: 0
         }
       },
       custom: {

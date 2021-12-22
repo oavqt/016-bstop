@@ -14,7 +14,7 @@ const testCarrierObjectCoordinates = {
   custom: {}
 };
 
-const testCellObjects = [
+const testBoardCellObjects = [
   { coords: { cell: '[0][0]' }, ship: testCarrierObject },
   { coords: { cell: '[0][1]' }, ship: testCarrierObject },
   { coords: { cell: '[0][2]' }, ship: testCarrierObject },
@@ -23,6 +23,6 @@ const testCellObjects = [
 ];
 
 test('insert cell coordinates into layout', () => {
-  shipObjectCoordinates(testCellObjects);
+  shipObjectCoordinates(testBoardCellObjects);
   expect(testCarrierObject).toStrictEqual(testCarrierObjectCoordinates);
 });

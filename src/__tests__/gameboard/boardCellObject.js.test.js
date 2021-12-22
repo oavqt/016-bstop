@@ -1,6 +1,6 @@
 import boardCellObject from '../../gameboard/boardCellObject';
 
-const testCellObject = {
+const testBoardCellObject = {
   coords: { cell: null, display: null },
   selected: false,
   status: { hit: false, missed: false },
@@ -8,15 +8,15 @@ const testCellObject = {
   custom: {}
 };
 
-const testCellPropertyFunction = () => 'dark souls';
+const testBoardCellObjectPropertiesFunctionCustom = () => 'dark souls';
 
-const testCellProperties = {
+const testBoardCellObjectProperties = {
   anime: 'one piece',
   movie: 'harry potter',
-  testCellPropertyFunction
+  testBoardCellObjectPropertiesFunctionCustom
 };
 
-const testCustomCellObject = {
+const testBoardCellObjectCustom = {
   coords: { cell: null, display: null },
   selected: false,
   status: { hit: false, missed: false },
@@ -24,16 +24,16 @@ const testCustomCellObject = {
   custom: {
     anime: 'one piece',
     movie: 'harry potter',
-    testCellPropertyFunction
+    testBoardCellObjectPropertiesFunctionCustom
   }
 };
 
 test('return a cell object', () => {
-  expect(boardCellObject()).toStrictEqual(testCellObject);
+  expect(boardCellObject()).toStrictEqual(testBoardCellObject);
 });
 
 test('return a cell object with custom properties passed in as an object', () => {
-  expect(boardCellObject(testCellProperties)).toStrictEqual(
-    testCustomCellObject
+  expect(boardCellObject(testBoardCellObjectProperties)).toStrictEqual(
+    testBoardCellObjectCustom
   );
 });

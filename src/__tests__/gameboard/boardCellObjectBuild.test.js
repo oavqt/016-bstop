@@ -1,15 +1,17 @@
 import boardCellObjectBuild from '../../gameboard/boardCellObjectBuild';
 
-const testCellPropertyFunction = () => 'dark souls';
+const testBoardCellObjectPropertiesFunctionCustom = () => 'dark souls';
 
-const testCellCustomPrototype = {
+const testBoardCellObjectPrototypeCustom = {
   anime: 'one piece',
   movie: 'harry potter',
-  testCellPropertyFunction
+  testBoardCellObjectPropertiesFunctionCustom
 };
 
 test('return default(cell) with a custom prototype', () => {
   expect(
-    Object.getPrototypeOf(boardCellObjectBuild(null, testCellCustomPrototype))
-  ).toStrictEqual(testCellCustomPrototype);
+    Object.getPrototypeOf(
+      boardCellObjectBuild(null, testBoardCellObjectPrototypeCustom)
+    )
+  ).toStrictEqual(testBoardCellObjectPrototypeCustom);
 });

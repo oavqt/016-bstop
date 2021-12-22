@@ -1,9 +1,16 @@
 import pubsub from '../tools/pubsub';
 
-function shipObjectSunk(shipObject) {
-  const shipLayout = shipObject.layout;
+function shipObjectSunk(boardObject, coords) {
+  const [coordsY, coordsX] = coords;
 
-  return shipLayout.every((item) => item === '[-][-]');
+  const boardCellObject = boardObject.board[coordsY][coordsX];
+  const shipObject = boardCellObject.ship;
+  const shipObjectLayout = shipObject.layout;
+
+  const status = shipObjectLayout.every((item) => item === '[-][-]');
+  if (status === true) pubsub.publish('boardStatsUpdateShips', -1);
+
+  return status;
 }
 
 pubsub.subscribe('shipHit', shipObjectSunk);

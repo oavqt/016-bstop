@@ -47,12 +47,12 @@ const testShipObject = [
     }
   ]
 ];
-const testShipPropertyFunction = () => 'dark souls';
+const testShipPropertiesFunctionCustom = () => 'dark souls';
 
-const testShipProperties = {
+const testShipPropertiesCustom = {
   anime: 'one piece',
   movie: 'harry potter',
-  testShipPropertyFunction
+  testShipPropertiesFunctionCustom
 };
 
 test.each(testShipObject)('return a ship object', (method, result) => {
@@ -62,8 +62,8 @@ test.each(testShipObject)('return a ship object', (method, result) => {
 test.each(testShipObject)(
   'return a ship object with custom properties passed in as an object',
   (method) => {
-    expect(shipObject[method](testShipProperties).custom).toMatchObject(
-      testShipProperties
+    expect(shipObject[method](testShipPropertiesCustom).custom).toMatchObject(
+      testShipPropertiesCustom
     );
   }
 );
