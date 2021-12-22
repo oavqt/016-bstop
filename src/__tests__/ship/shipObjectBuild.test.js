@@ -21,16 +21,16 @@ const testDestroyerObject = {
   custom: {}
 };
 
-const testShipPrototypeFunctionCustom = () => 'dark souls';
+const testShipObjectProtoPropertiesFunction = () => 'dark souls';
 
-const testShipPrototypeCustom = {
+const testShipObjectProtoProperties = {
   testShipObjectShipwrecked: {
     layout: ['[-][-]', '[-][-]', '[-][-]', '[-][-]', '[-][-]']
   },
   testShipObjectStanding: {
     layout: ['[-][-]', '[-][-]', '[-][-]', '[0][3]', '[0][4]']
   },
-  testShipPrototypeFunctionCustom
+  testShipObjectProtoPropertiesFunction
 };
 
 test('return default(battleship)', () => {
@@ -44,7 +44,13 @@ test('return destroyer', () => {
 });
 
 test('return carrier with a custom prototype passed in as an object', () => {
-  const carrier = shipObjectBuild('carrier', null, testShipPrototypeCustom);
+  const carrier = shipObjectBuild(
+    'carrier',
+    null,
+    testShipObjectProtoProperties
+  );
   expect(carrier).toStrictEqual(testCarrierObject);
-  expect(Object.getPrototypeOf(carrier)).toStrictEqual(testShipPrototypeCustom);
+  expect(Object.getPrototypeOf(carrier)).toStrictEqual(
+    testShipObjectProtoProperties
+  );
 });

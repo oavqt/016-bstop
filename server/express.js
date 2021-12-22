@@ -24,5 +24,6 @@ const staticMiddleware = express.static('dist');
 server.use(staticMiddleware);
 
 server.listen('12345', () => {
+  // eslint-disable-next-line no-console
   console.log('Server is starting at... http://localhost:12345/');
 });

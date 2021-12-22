@@ -6,9 +6,9 @@ const shipObjectBuild = (
   shipObjectProtoProperties = ''
 ) => {
   const base = shipObject[type](shipObjectProperties);
-  const customProtoProperties = { ...shipObjectProtoProperties };
+  const protoProperties = { ...shipObjectProtoProperties };
 
-  return Object.assign(Object.create(customProtoProperties), base);
+  return Object.assign(Object.create(protoProperties), base);
 };
 
 export default shipObjectBuild;

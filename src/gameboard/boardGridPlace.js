@@ -1,6 +1,6 @@
 import pubsub from '../tools/pubsub';
 
-function boardGridObjectPlace(
+function boardGridPlace(
   boardObject,
   shipObject,
   coordsY,
@@ -37,4 +37,4 @@ function boardGridObjectPlace(
   return true;
 }
 
-export default boardGridObjectPlace;
+export default boardGridPlace;

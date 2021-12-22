@@ -1,11 +1,19 @@
-import boardRowBuild from './boardRow';
+import boardGridBuild from './boardGrid';
 
-const boardGridObject = (
-  boardGridObjectProperties,
-  boardCellObjectProperties
+const boardObject = (
+  gridLength,
+  rowLength,
+  boardObjectProperties,
+  boardCellObjectProperties,
+  boardCellObjectProtoProperties
 ) => {
   const object = {
-    board: [],
+    board: boardGridBuild(
+      gridLength,
+      rowLength,
+      boardCellObjectProperties,
+      boardCellObjectProtoProperties
+    ),
     properties: {
       status: {
         active: false,
@@ -24,16 +32,12 @@ const boardGridObject = (
         }
       },
       custom: {
-        ...boardGridObjectProperties
+        ...boardObjectProperties
       }
     }
   };
 
-  for (let i = 0; i < 10; i += 1) {
-    object.board.push(boardRowBuild(boardCellObjectProperties));
-  }
-
   return object;
 };
 
-export default boardGridObject;
+export default boardObject;

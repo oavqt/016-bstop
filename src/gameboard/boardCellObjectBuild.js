@@ -1,11 +1,11 @@
 import boardCellObject from './boardCellObject';
 
 const boardCellObjectBuild = (
-  boardCellObjectProperties = '',
-  boardCellProtoProperties = ''
+  boardCellObjectProperties,
+  boardCellObjectProtoProperties
 ) => {
   const base = boardCellObject(boardCellObjectProperties);
-  const customProtoProperties = { ...boardCellProtoProperties };
+  const customProtoProperties = { ...boardCellObjectProtoProperties };
 
   return Object.assign(Object.create(customProtoProperties), base);
 };

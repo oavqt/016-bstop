@@ -1,4 +1,4 @@
-const boardCellObject = (boardCellObjectProperties = '') => {
+const boardCellObject = (boardCellObjectProperties) => {
   return {
     coords: { cell: null, display: null },
     selected: false,

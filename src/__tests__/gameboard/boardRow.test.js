@@ -9,11 +9,15 @@ const testBoardCellObject = {
 };
 
 test('return array with a length of 10', () => {
-  expect(boardRowBuild()).toHaveLength(10);
+  expect(boardRowBuild(10, null, null)).toHaveLength(10);
 });
 
-test('return array with a length of 10 containing 10 testCells', () => {
-  boardRowBuild().forEach((boardCellObject) => {
+test('return array with a length of 12', () => {
+  expect(boardRowBuild(12, null, null)).toHaveLength(12);
+});
+
+test('return array with a length of 10 containing 10 testBoardCellObject', () => {
+  boardRowBuild(10, null, null).forEach((boardCellObject) => {
     expect(boardCellObject).toStrictEqual(testBoardCellObject);
   });
 });
