@@ -1,6 +1,8 @@
-const randomCoords = (min, max) => {
-  const coordsY = Math.floor(Math.random() * (max - min + 1) + min);
-  const coordsX = Math.floor(Math.random() * (max - min + 1) + min);
+const randomCoords = ([firstMin, firstMax], [secondMin, secondMax]) => {
+  const coordsY = Math.floor(Math.random() * (firstMax - firstMin) + firstMin);
+  const coordsX = Math.floor(
+    Math.random() * (secondMax - secondMin) + secondMin
+  );
 
   return [coordsY, coordsX];
 };

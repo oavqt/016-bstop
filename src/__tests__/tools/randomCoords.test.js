@@ -3,7 +3,8 @@ import randomCoords from '../../tools/randomCoords';
 const testRandomCoords = [];
 
 test('expect random coordinates between (min and min) to be inserted into a test array', () => {
-  for (let i = 0; i < 10; i += 1) testRandomCoords.push(randomCoords(0, 10));
+  for (let i = 0; i < 10; i += 1)
+    testRandomCoords.push(randomCoords([0, 10], [10, 20]));
 
   testRandomCoords.forEach((coords) => {
     const coordsY = coords[0];
@@ -14,7 +15,7 @@ test('expect random coordinates between (min and min) to be inserted into a test
     expect(coordsY).toBeLessThanOrEqual(10);
 
     expect(Number.isSafeInteger(coordsX)).toBe(true);
-    expect(coordsX).toBeGreaterThanOrEqual(0);
-    expect(coordsX).toBeLessThanOrEqual(10);
+    expect(coordsX).toBeGreaterThanOrEqual(10);
+    expect(coordsX).toBeLessThanOrEqual(20);
   });
 });
