@@ -16,8 +16,8 @@ const aiBasicSelectCoordinate = (boardObject) => {
       coordsCached = [coordsY, coordsX];
       done = true;
     } else {
-      done = boardObject.board.every((indexY) =>
-        indexY.every((indexX) => indexX.selected === true)
+      done = boardObject.board.every((indexOfY) =>
+        indexOfY.every((indexOfX) => indexOfX.selected === true)
       );
     }
   }
