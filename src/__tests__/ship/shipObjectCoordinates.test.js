@@ -2,6 +2,8 @@ import shipObjectCoordinates from '../../ship/shipObjectCoordinates';
 
 const testCarrierObject = {
   id: null,
+  isHit: false,
+  isSunk: false,
   type: 'Carrier',
   layout: ['[][]', '[][]', '[][]', '[][]', '[][]'],
   custom: {}
@@ -9,6 +11,8 @@ const testCarrierObject = {
 
 const testCarrierObjectCoordinates = {
   id: null,
+  isHit: false,
+  isSunk: false,
   type: 'Carrier',
   layout: ['[0][0]', '[0][1]', '[0][2]', '[0][3]', '[0][4]'],
   custom: {}

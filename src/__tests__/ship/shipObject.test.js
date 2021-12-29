@@ -5,6 +5,8 @@ const testShipObject = [
     'carrier',
     {
       id: null,
+      isHit: false,
+      isSunk: false,
       type: 'Carrier',
       layout: ['[][]', '[][]', '[][]', '[][]', '[][]'],
       custom: {}
@@ -14,6 +16,8 @@ const testShipObject = [
     'battleship',
     {
       id: null,
+      isHit: false,
+      isSunk: false,
       type: 'Battleship',
       layout: ['[][]', '[][]', '[][]', '[][]'],
       custom: {}
@@ -23,6 +27,8 @@ const testShipObject = [
     'destroyer',
     {
       id: null,
+      isHit: false,
+      isSunk: false,
       type: 'Destroyer',
       layout: ['[][]', '[][]', '[][]'],
       custom: {}
@@ -32,6 +38,8 @@ const testShipObject = [
     'submarine',
     {
       id: null,
+      isHit: false,
+      isSunk: false,
       type: 'Submarine',
       layout: ['[][]', '[][]', '[][]'],
       custom: {}
@@ -41,6 +49,8 @@ const testShipObject = [
     'patrol',
     {
       id: null,
+      isHit: false,
+      isSunk: false,
       type: 'Patrol Boat',
       layout: ['[][]', '[][]'],
       custom: {}

@@ -2,6 +2,8 @@ import shipObjectBuild from '../../ship/shipObjectBuild';
 
 const testCarrierObject = {
   id: null,
+  isHit: false,
+  isSunk: false,
   type: 'Carrier',
   layout: ['[][]', '[][]', '[][]', '[][]', '[][]'],
   custom: {}
@@ -9,6 +11,8 @@ const testCarrierObject = {
 
 const testBattleshipObject = {
   id: null,
+  isHit: false,
+  isSunk: false,
   type: 'Battleship',
   layout: ['[][]', '[][]', '[][]', '[][]'],
   custom: {}
@@ -16,6 +20,8 @@ const testBattleshipObject = {
 
 const testDestroyerObject = {
   id: null,
+  isHit: false,
+  isSunk: false,
   type: 'Destroyer',
   layout: ['[][]', '[][]', '[][]'],
   custom: {}

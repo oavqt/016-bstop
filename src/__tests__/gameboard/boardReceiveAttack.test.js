@@ -3,22 +3,70 @@ import boardReceiveAttack from '../../gameboard/boardReceiveAttack';
 const testBoardObject = {
   board: [
     [
-      { selected: false, status: { hit: false, missed: false }, ship: 'test' },
-      { selected: false, status: { hit: false, missed: false }, ship: 'test' },
-      { selected: false, status: { hit: false, missed: false }, ship: 'test' },
-      { selected: false, status: { hit: false, missed: false }, ship: null },
-      { selected: false, status: { hit: false, missed: false }, ship: null },
-      { selected: false, status: { hit: false, missed: false }, ship: null }
+      {
+        selected: false,
+        status: { isHit: false, isMissed: false },
+        ship: 'test'
+      },
+      {
+        selected: false,
+        status: { isHit: false, isMissed: false },
+        ship: 'test'
+      },
+      {
+        selected: false,
+        status: { isHit: false, isMissed: false },
+        ship: 'test'
+      },
+      {
+        selected: false,
+        status: { isHit: false, isMissed: false },
+        ship: null
+      },
+      {
+        selected: false,
+        status: { isHit: false, isMissed: false },
+        ship: null
+      },
+      { selected: false, status: { isHit: false, isMissed: false }, ship: null }
     ],
     [
-      { selected: false, status: { hit: false, missed: false }, ship: null },
-      { selected: false, status: { hit: false, missed: false }, ship: null },
-      { selected: false, status: { hit: false, missed: false }, ship: null },
-      { selected: false, status: { hit: false, missed: false }, ship: null },
-      { selected: false, status: { hit: false, missed: false }, ship: 'test' },
-      { selected: false, status: { hit: false, missed: false }, ship: 'test' },
-      { selected: false, status: { hit: false, missed: false }, ship: 'test' },
-      { selected: false, status: { hit: false, missed: false }, ship: null }
+      {
+        selected: false,
+        status: { isHit: false, isMissed: false },
+        ship: null
+      },
+      {
+        selected: false,
+        status: { isHit: false, isMissed: false },
+        ship: null
+      },
+      {
+        selected: false,
+        status: { isHit: false, isMissed: false },
+        ship: null
+      },
+      {
+        selected: false,
+        status: { isHit: false, isMissed: false },
+        ship: null
+      },
+      {
+        selected: false,
+        status: { isHit: false, isMissed: false },
+        ship: 'test'
+      },
+      {
+        selected: false,
+        status: { isHit: false, isMissed: false },
+        ship: 'test'
+      },
+      {
+        selected: false,
+        status: { isHit: false, isMissed: false },
+        ship: 'test'
+      },
+      { selected: false, status: { isHit: false, isMissed: false }, ship: null }
     ]
   ]
 };
@@ -39,8 +87,8 @@ test.each(testFalse)(
   (coordsY, coordsX) => {
     boardReceiveAttack(testBoardObject, coordsY, coordsX);
     expect(testBoardObject.board[coordsY][coordsX].selected).toBe(true);
-    expect(testBoardObject.board[coordsY][coordsX].status.missed).toBe(true);
-    expect(testBoardObject.board[coordsY][coordsX].status.hit).toBe(false);
+    expect(testBoardObject.board[coordsY][coordsX].status.isMissed).toBe(true);
+    expect(testBoardObject.board[coordsY][coordsX].status.isHit).toBe(false);
   }
 );
 
@@ -49,7 +97,7 @@ test.each(testTrue)(
   (coordsY, coordsX) => {
     boardReceiveAttack(testBoardObject, coordsY, coordsX);
     expect(testBoardObject.board[coordsY][coordsX].selected).toBe(true);
-    expect(testBoardObject.board[coordsY][coordsX].status.missed).toBe(false);
-    expect(testBoardObject.board[coordsY][coordsX].status.hit).toBe(true);
+    expect(testBoardObject.board[coordsY][coordsX].status.isMissed).toBe(false);
+    expect(testBoardObject.board[coordsY][coordsX].status.isHit).toBe(true);
   }
 );

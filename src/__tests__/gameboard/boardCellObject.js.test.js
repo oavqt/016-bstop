@@ -3,7 +3,7 @@ import boardCellObject from '../../gameboard/boardCellObject';
 const testBoardCellObject = {
   coords: { cell: null, display: null },
   selected: false,
-  status: { hit: false, missed: false },
+  status: { isHit: false, isMissed: false },
   ship: null,
   custom: {}
 };
@@ -19,7 +19,7 @@ const testBoardCellObjectProperties = {
 const testBoardCellObjectCustom = {
   coords: { cell: null, display: null },
   selected: false,
-  status: { hit: false, missed: false },
+  status: { isHit: false, isMissed: false },
   ship: null,
   custom: {
     anime: 'one piece',

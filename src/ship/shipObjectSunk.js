@@ -8,7 +8,9 @@ function shipObjectSunk(boardObject, coords) {
   const shipObjectLayout = shipObject.layout;
 
   const status = shipObjectLayout.every((item) => item === '[-][-]');
+
   if (status === true) pubsub.publish('boardStatsUpdateShips', -1);
+  shipObject.isSunk = status;
 
   return status;
 }

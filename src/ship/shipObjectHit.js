@@ -12,6 +12,7 @@ function shipObjectHit(boardObject, coords) {
   );
 
   shipObjectLayout[index] = '[-][-]';
+  shipObject.isHit = true;
 }
 
 pubsub.subscribe('shipHit', shipObjectHit);

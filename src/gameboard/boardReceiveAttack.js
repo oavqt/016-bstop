@@ -8,12 +8,12 @@ function boardReceiveAttack(boardObject, coordsY, coordsX) {
   boardCellObject.selected = true;
 
   if (boardShipObject !== null) {
-    boardCellObject.status.hit = true;
+    boardCellObject.status.isHit = true;
 
     pubsub.publish('shipHit', boardObject, coords);
     pubsub.publish('boardStatsUpdateAttempts', 1);
   } else {
-    boardCellObject.status.missed = true;
+    boardCellObject.status.isMissed = true;
 
     pubsub.publish('boardStatsUpdateAttempts', -1);
   }
