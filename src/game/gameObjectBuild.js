@@ -13,10 +13,14 @@ const gameObjectBuild = {
         aiObject,
         gameObjectTypeComputerProperties
       );
-
       const protoProperties = { ...gameObjectTypeComputerProtoProperties };
 
-      return Object.assign(Object.create(protoProperties), base);
+      const gameObjectMerged = Object.assign(
+        Object.create(protoProperties),
+        base
+      );
+
+      return gameObjectMerged;
     }
   }
 };

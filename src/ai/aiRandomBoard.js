@@ -2,6 +2,8 @@ import randomCoords from '../tools/randomCoords';
 import boardGridPlace from '../gameboard/boardGridPlace';
 import shipObjectBuild from '../ship/shipObjectBuild';
 
+import pubsub from '../tools/pubsub';
+
 const aiRandomBoard = (boardObject) => {
   const shipObjectType = [
     'carrier',
@@ -29,8 +31,7 @@ const aiRandomBoard = (boardObject) => {
       done = boardGridPlace(
         boardObject,
         shipObject,
-        coordsY,
-        coordsX,
+        [coordsY, coordsX],
         randomDirection
       );
     }
@@ -38,5 +39,7 @@ const aiRandomBoard = (boardObject) => {
 
   return true;
 };
+
+pubsub.subscribe('aiRandomBoard', aiRandomBoard);
 
 export default aiRandomBoard;

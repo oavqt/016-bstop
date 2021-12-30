@@ -7,7 +7,12 @@ const boardCellObjectBuild = (
   const base = boardCellObject(boardCellObjectProperties);
   const customProtoProperties = { ...boardCellObjectProtoProperties };
 
-  return Object.assign(Object.create(customProtoProperties), base);
+  const boardCellObjectMerged = Object.assign(
+    Object.create(customProtoProperties),
+    base
+  );
+
+  return boardCellObjectMerged;
 };
 
 export default boardCellObjectBuild;

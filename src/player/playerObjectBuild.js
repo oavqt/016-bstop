@@ -8,7 +8,12 @@ const playerObjectBuild = (
   const base = playerObject(boardObject, playerObjectProperties);
   const protoProperties = { ...playerObjectProtoProperties };
 
-  return Object.assign(Object.create(protoProperties), base);
+  const playerObjectMerged = Object.assign(
+    Object.create(protoProperties),
+    base
+  );
+
+  return playerObjectMerged;
 };
 
 export default playerObjectBuild;

@@ -1,3 +1,5 @@
+import pubsub from '../tools/pubsub';
+
 const boardCoordinates = (boardObject) => {
   const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
 
@@ -17,5 +19,7 @@ const boardCoordinates = (boardObject) => {
 
   return boardObject;
 };
+
+pubsub.subscribe('boardCoordinates', boardCoordinates);
 
 export default boardCoordinates;

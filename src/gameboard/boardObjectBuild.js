@@ -1,3 +1,4 @@
+import pubsub from '../tools/pubsub';
 import boardObject from './boardObject';
 
 const boardObjectBuild = (
@@ -15,10 +16,13 @@ const boardObjectBuild = (
     boardCellObjectProperties,
     boardCellObjectProtoProperties
   );
-
   const protoProperties = { ...boardObjectProtoProperties };
 
-  return Object.assign(Object.create(protoProperties), base);
+  const boardObjectMerged = Object.assign(Object.create(protoProperties), base);
+
+  pubsub.publish('boardCoordinates', boardObjectMerged);
+
+  return boardObjectMerged;
 };
 
 export default boardObjectBuild;

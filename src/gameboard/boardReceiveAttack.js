@@ -1,9 +1,9 @@
 import pubsub from '../tools/pubsub';
 
-function boardReceiveAttack(boardObject, coordsY, coordsX) {
+function boardReceiveAttack(boardObject, coords) {
+  const [coordsY, coordsX] = coords;
   const boardCellObject = boardObject.board[coordsY][coordsX];
   const boardShipObject = boardCellObject.ship;
-  const coords = [coordsY, coordsX];
 
   boardCellObject.selected = true;
 

@@ -8,7 +8,9 @@ const aiObjectBuild = (
   const base = aiObject(boardObject, aiObjectProperties);
   const protoProperties = { ...aiObjectProtoProperties };
 
-  return Object.assign(Object.create(protoProperties), base);
+  const aiObjectMerged = Object.assign(Object.create(protoProperties), base);
+
+  return aiObjectMerged;
 };
 
 export default aiObjectBuild;

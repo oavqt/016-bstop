@@ -8,7 +8,9 @@ const shipObjectBuild = (
   const base = shipObject[type](shipObjectProperties);
   const protoProperties = { ...shipObjectProtoProperties };
 
-  return Object.assign(Object.create(protoProperties), base);
+  const shipObjectMerged = Object.assign(Object.create(protoProperties), base);
+
+  return shipObjectMerged;
 };
 
 export default shipObjectBuild;
