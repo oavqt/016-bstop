@@ -2,8 +2,8 @@ import aiObject from './aiObject';
 
 const aiObjectBuild = (
   boardObject,
-  aiObjectProperties = '',
-  aiObjectProtoProperties = ''
+  aiObjectProperties = {},
+  aiObjectProtoProperties = {}
 ) => {
   const base = aiObject(boardObject, aiObjectProperties);
   const protoProperties = { ...aiObjectProtoProperties };

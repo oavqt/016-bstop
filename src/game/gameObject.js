@@ -1,10 +1,6 @@
 const gameObject = {
   type: {
-    computer: (
-      playerObject,
-      aiObject,
-      gameObjectTypeComputerProperties = ''
-    ) => {
+    computer: (playerObject, aiObject, gameObjectTypeComputerProperties) => {
       return {
         playerObject,
         aiObject,

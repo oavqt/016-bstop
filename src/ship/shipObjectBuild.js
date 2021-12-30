@@ -2,8 +2,8 @@ import shipObject from './shipObject';
 
 const shipObjectBuild = (
   type = 'battleship',
-  shipObjectProperties = '',
-  shipObjectProtoProperties = ''
+  shipObjectProperties = {},
+  shipObjectProtoProperties = {}
 ) => {
   const base = shipObject[type](shipObjectProperties);
   const protoProperties = { ...shipObjectProtoProperties };

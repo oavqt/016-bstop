@@ -3,10 +3,10 @@ import boardObject from './boardObject';
 const boardObjectBuild = (
   gridLength = 10,
   rowLength = 10,
-  boardObjectProperties = '',
-  boardObjectProtoProperties = '',
-  boardCellObjectProperties = '',
-  boardCellObjectProtoProperties = ''
+  boardObjectProperties = {},
+  boardObjectProtoProperties = {},
+  boardCellObjectProperties = {},
+  boardCellObjectProtoProperties = {}
 ) => {
   const base = boardObject(
     gridLength,

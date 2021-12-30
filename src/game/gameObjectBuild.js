@@ -5,8 +5,8 @@ const gameObjectBuild = {
     computer: (
       playerObject,
       aiObject,
-      gameObjectTypeComputerProperties = '',
-      gameObjectTypeComputerProtoProperties = ''
+      gameObjectTypeComputerProperties = {},
+      gameObjectTypeComputerProtoProperties = {}
     ) => {
       const base = gameObject.type.computer(
         playerObject,

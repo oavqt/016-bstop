@@ -2,8 +2,8 @@ import playerObject from './playerObject';
 
 const playerObjectBuild = (
   boardObject,
-  playerObjectProperties = '',
-  playerObjectProtoProperties = ''
+  playerObjectProperties = {},
+  playerObjectProtoProperties = {}
 ) => {
   const base = playerObject(boardObject, playerObjectProperties);
   const protoProperties = { ...playerObjectProtoProperties };
