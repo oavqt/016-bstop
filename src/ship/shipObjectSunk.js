@@ -9,7 +9,11 @@ function shipObjectSunk(boardObject, coords) {
 
   const status = shipObjectLayout.every((item) => item === '[-][-]');
 
-  if (status === true) pubsub.publish('boardStatsUpdateShips', -1);
+  if (status === true) {
+    pubsub.publish('boardStatsUpdateShips', -1);
+    pubsub.publish('boardStatusUpdateIsWinnerQuery', boardObject);
+  }
+
   shipObject.isSunk = status;
 
   return status;

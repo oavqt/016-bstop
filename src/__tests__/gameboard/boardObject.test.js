@@ -3,8 +3,8 @@ import boardObject from '../../gameboard/boardObject';
 const testBoardObject = {
   properties: {
     status: {
-      active: false,
-      completed: false
+      isTurn: false,
+      isWinner: false
     },
     stats: {
       attempts: {

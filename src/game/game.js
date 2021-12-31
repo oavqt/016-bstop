@@ -51,9 +51,13 @@ const game = (() => {
       settings.aiObjectProtoProperties
     );
 
+    const firstPlayerObject = playerObject;
+    const secondPlayerObject =
+      settings.gameObjectType === 'computer' ? aiObject : playerObject;
+
     current = gameObjectBuild.type[settings.gameObjectType](
-      playerObject,
-      aiObject,
+      firstPlayerObject,
+      secondPlayerObject,
       settings.gameObjectProperties,
       settings.gameObjectProtoProperties
     );

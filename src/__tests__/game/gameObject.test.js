@@ -1,35 +1,29 @@
 import gameObject from '../../game/gameObject';
 
-describe('gameObject.type.computer', () => {
-  const testGameObjectTypeComputer = {
-    playerObject: 'kotor',
-    aiObject: 'kotor',
+const testGameObject = {
+  firstPlayerObject: 'kotor',
+  secondPlayerObject: 'kotor',
+  status: {
     isTurn: null,
-    isWinner: null,
-    custom: {}
-  };
+    isWinner: null
+  },
+  custom: {}
+};
 
-  const testGameObjectTypeComputerPropertiesCustomFunction = () => 'dark souls';
+const testGameObjectPropertiesCustomFunction = () => 'dark souls';
 
-  const testGameObjectTypeComputerPropertiesCustom = {
-    anime: 'one piece',
-    movie: 'harry potter',
-    testGameObjectTypeComputerPropertiesCustomFunction
-  };
+const testGameObjectPropertiesCustom = {
+  anime: 'one piece',
+  movie: 'harry potter',
+  testGameObjectPropertiesCustomFunction
+};
 
-  test('return a gameObject.type.computer object', () => {
-    expect(gameObject.type.computer('kotor', 'kotor')).toStrictEqual(
-      testGameObjectTypeComputer
-    );
-  });
+test('return a game object', () => {
+  expect(gameObject('kotor', 'kotor')).toStrictEqual(testGameObject);
+});
 
-  test('return a gameObject.type.computer object with custom properties', () => {
-    expect(
-      gameObject.type.computer(
-        'kotor',
-        'kotor',
-        testGameObjectTypeComputerPropertiesCustom
-      ).custom
-    ).toMatchObject(testGameObjectTypeComputerPropertiesCustom);
-  });
+test('return a game object with custom properties', () => {
+  expect(
+    gameObject('kotor', 'kotor', testGameObjectPropertiesCustom).custom
+  ).toMatchObject(testGameObjectPropertiesCustom);
 });
