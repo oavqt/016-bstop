@@ -5,16 +5,33 @@ import pubsub from '../tools/pubsub';
 const domController = {
   build: {
     page: () => {
+      domController.clear.page();
       domQuery.element.content().appendChild(dom.build.skeleton());
     },
     board: (boardObjectSize) => {
-      const [parentName, gridName, gridSize] = boardObjectSize;
+      const [parentElementName, gridName, gridSize] = boardObjectSize;
       const { columnLength, rowLength } = gridSize;
 
-      const parentBoard = domQuery.element.board[parentName]();
-      parentBoard.appendChild(
+      domController.clear.board(parentElementName);
+
+      const parentElement = domQuery.element.board[parentElementName]();
+
+      parentElement.appendChild(
         dom.build.board(gridName, columnLength, rowLength)
       );
+    }
+  },
+  clear: {
+    page: () => {
+      const content = domQuery.element.content();
+
+      while (content.firstChild) content.removeChild(content.lastChild);
+    },
+    board: (parentElementName) => {
+      const parentElement = domQuery.element.board[parentElementName]();
+
+      while (parentElement.firstChild)
+        parentElement.removeChild(parentElement.lastChild);
     }
   }
 };

@@ -1,1 +1,72 @@
 @import url(./nreset.css);
+
+.--grid {
+  display: grid;
+  grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+  height: 100%;
+  width: 100%;
+}
+
+.--large {
+  height: 3em;
+  width: 3em;
+}
+
+.--small {
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.button--grid__square {
+  border: none;
+  border-radius: 50%;
+}
+
+.button--grid__square:hover {
+  cursor: pointer;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.content__container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 75%;
+  width: 75%;
+}
+
+.container__middle {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.middle__board {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  width: 75%;
+}
+
+.board__first {
+  align-self: flex-start;
+  height: 15em;
+  order: 1;
+  width: 15em;
+}
+
+.board__second {
+  height: 30em;
+  order: 2;
+  width: 30em;
+}

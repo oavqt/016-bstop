@@ -48,13 +48,16 @@ const dom = {
     },
     board: (gridName, columnLength, rowLength) => {
       const boardGridElement = domElement.create('div', {
-        class: `${gridName}__grid`
+        class: `${gridName}__grid --grid`
       });
+
+      const buttonGridSquareSize =
+        gridName === 'firstPlayerObject' ? '--small' : '--large'; // Temporary
 
       for (let iColumn = 0; iColumn < columnLength; iColumn += 1) {
         for (let iRow = 0; iRow < rowLength; iRow += 1) {
-          const gridSquareElement = domElement.create('div', {
-            class: 'grid__square',
+          const gridSquareElement = domElement.create('button', {
+            class: `button--grid__square ${buttonGridSquareSize}`,
             'data-board': gridName,
             'data-column': iColumn,
             'data-row': iRow
