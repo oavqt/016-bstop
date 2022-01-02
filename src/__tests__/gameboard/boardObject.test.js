@@ -6,6 +6,10 @@ const testBoardObject = {
       isTurn: false,
       isWinner: false
     },
+    size: {
+      columnLength: 10,
+      rowLength: 10
+    },
     stats: {
       attempts: {
         total: 0,
@@ -30,7 +34,7 @@ const testBoardObjectPropertiesCustom = {
   testBoardObjectPropertiesCustomFunction
 };
 
-test('return object with property (properties) that contains (status, stats, ships, and custom) properties', () => {
+test('return object with property (properties) that contains (status, size, stats, ships, and custom) properties', () => {
   expect(boardObject(10, 10, null, null, null).properties).toStrictEqual(
     testBoardObject.properties
   );

@@ -3,7 +3,7 @@ import game from '../../game/game';
 describe('game.options.update', () => {
   const testGameOptionsCustom = {
     gameObjectType: 'player',
-    gridLength: 12,
+    columnLength: 12,
     rowLength: 12
   };
 

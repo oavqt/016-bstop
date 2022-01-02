@@ -1,27 +1,26 @@
 import pubsub from '../tools/pubsub';
 
 const boardStatsUpdate = {
-  attempts: (boardObject, value) => {
-    const boardObjectProperties = boardObject.properties;
-    const propertiesStats = boardObjectProperties.stats;
-    const statsAttempts = propertiesStats.attempts;
+  attempts: (boardObjectValue) => {
+    const [boardObject, value] = boardObjectValue;
+    const boardObjectPropertiesStatsAttempts =
+      boardObject.properties.stats.attempts;
 
-    statsAttempts.total += 1;
+    boardObjectPropertiesStatsAttempts.total += 1;
 
-    if (value > 0) statsAttempts.hits += 1;
-    else statsAttempts.misses += 1;
+    if (value > 0) boardObjectPropertiesStatsAttempts.hits += 1;
+    else boardObjectPropertiesStatsAttempts.misses += 1;
   },
-  ships: (boardObject, value) => {
-    const boardObjectProperties = boardObject.properties;
-    const propertiesStats = boardObjectProperties.stats;
-    const statsShips = propertiesStats.ships;
+  ships: (boardObjectValue) => {
+    const [boardObject, value] = boardObjectValue;
+    const boardObjectPropertiesStatsShips = boardObject.properties.stats.ships;
 
     if (value > 0) {
-      statsShips.total += 1;
-      statsShips.standing += 1;
+      boardObjectPropertiesStatsShips.total += 1;
+      boardObjectPropertiesStatsShips.standing += 1;
     } else {
-      statsShips.shipwrecked += 1;
-      statsShips.standing -= 1;
+      boardObjectPropertiesStatsShips.shipwrecked += 1;
+      boardObjectPropertiesStatsShips.standing -= 1;
     }
   }
 };

@@ -28,7 +28,7 @@ function boardGridPlace(boardObject, shipObject, coords, direction = 'left') {
   });
 
   pubsub.publish('shipObjectCoordinates', boardCellObjectArray);
-  pubsub.publish('boardStatsUpdateShips', 1);
+  pubsub.publish('boardStatsUpdateShips', [boardObject, 1]);
 
   return true;
 }

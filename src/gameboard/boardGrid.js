@@ -1,16 +1,16 @@
 import boardRowBuild from './boardRow';
 
 const boardGridBuild = (
-  gridLength,
+  columnLength,
   rowLength,
   boardCellObjectProperties,
   boardCellObjectProtoProperties
 ) => {
   const board = [];
 
-  const int = Number(gridLength);
+  const int = Number(columnLength);
 
-  if (typeof gridLength === 'object' || Number.isNaN(int))
+  if (typeof columnLength === 'object' || Number.isNaN(int))
     throw new Error('Value is not a number');
   else
     for (let i = 0; i < int; i += 1) {

@@ -27,18 +27,33 @@ const gameController = {
 
           pubsub.publish(
             'aiRandomBoard',
-            gameController.get.playerObject('secondPlayerObject')
+            gameController.get.secondPlayerObject().boardObject
           );
+
+          pubsub.publish('firstPlayerObjectDOMBuildBoard', [
+            'first',
+            'firstPlayerObject',
+            gameController.get.firstPlayerObject().boardObject.properties.size
+          ]);
+
+          pubsub.publish('secondPlayerObjectDOMBuildBoard', [
+            'second',
+            'secondPlayerObject',
+            gameController.get.secondPlayerObject().boardObject.properties.size
+          ]);
         }
       }
     }
   },
   get: {
     currentGameObject: () => {
-      return game.current;
+      return game.current.storage;
     },
-    playerObject: (player) => {
-      return game.current[player];
+    firstPlayerObject: () => {
+      return game.current.storage.firstPlayerObject;
+    },
+    secondPlayerObject: () => {
+      return game.current.storage.secondPlayerObject;
     }
   },
   methods: {
@@ -51,11 +66,11 @@ const gameController = {
     },
     board: {
       receiveAttack: (player, coords) => {
-        boardReceiveAttack(gameController.get.playerObject(player), coords);
+        boardReceiveAttack(gameController.get[player](), coords);
       },
       gridPlace: (player, shipObjectType, coords, direction = 'left') => {
         boardGridPlace(
-          gameController.get.playerObject(player),
+          gameController.get[player](),
           shipObjectBuild(shipObjectType),
           coords,
           direction
@@ -66,30 +81,24 @@ const gameController = {
       board: {
         statsUpdate: {
           attempts: (player, value) => {
-            boardStatsUpdate.attempts(
-              gameController.get.playerObject(player),
-              value
-            );
+            boardStatsUpdate.attempts(gameController.get[player](), value);
           },
           ships: (player, value) => {
-            boardStatsUpdate.ships(
-              gameController.get.playerObject(player),
-              value
-            );
+            boardStatsUpdate.ships(gameController.get[player](), value);
           }
         }
       },
       ship: {
         objectHit: (player, coords) => {
-          shipObjectHit(gameController.get.playerObject(player), coords);
+          shipObjectHit(gameController.get[player](), coords);
         },
         objectSunk: (player, coords) => {
-          shipObjectSunk(gameController.get.playerObject(player), coords);
+          shipObjectSunk(gameController.get[player](), coords);
         }
       },
       ai: {
         randomBoard: (player) => {
-          aiRandomBoard(gameController.get.playerObject(player));
+          aiRandomBoard(gameController.get[player]());
         }
       }
     }

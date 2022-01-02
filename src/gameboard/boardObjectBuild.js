@@ -2,7 +2,7 @@ import pubsub from '../tools/pubsub';
 import boardObject from './boardObject';
 
 const boardObjectBuild = (
-  gridLength = 10,
+  columnLength = 10,
   rowLength = 10,
   boardObjectProperties = {},
   boardObjectProtoProperties = {},
@@ -10,7 +10,7 @@ const boardObjectBuild = (
   boardCellObjectProtoProperties = {}
 ) => {
   const base = boardObject(
-    gridLength,
+    columnLength,
     rowLength,
     boardObjectProperties,
     boardCellObjectProperties,

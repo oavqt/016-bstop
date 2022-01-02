@@ -1,7 +1,7 @@
 import boardGridBuild from './boardGrid';
 
 const boardObject = (
-  gridLength,
+  columnLength,
   rowLength,
   boardObjectProperties,
   boardCellObjectProperties,
@@ -9,7 +9,7 @@ const boardObject = (
 ) => {
   const object = {
     board: boardGridBuild(
-      gridLength,
+      columnLength,
       rowLength,
       boardCellObjectProperties,
       boardCellObjectProtoProperties
@@ -18,6 +18,10 @@ const boardObject = (
       status: {
         isTurn: false,
         isWinner: false
+      },
+      size: {
+        columnLength,
+        rowLength
       },
       stats: {
         attempts: {

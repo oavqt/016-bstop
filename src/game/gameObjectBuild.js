@@ -3,15 +3,15 @@ import gameObject from './gameObject';
 const gameObjectBuild = (
   firstPlayerObject,
   secondPlayerObject,
-  gameObjectTypeComputerProperties = {},
-  gameObjectTypeComputerProtoProperties = {}
+  gameObjectProperties = {},
+  gameObjectProtoProperties = {}
 ) => {
   const base = gameObject(
     firstPlayerObject,
     secondPlayerObject,
-    gameObjectTypeComputerProperties
+    gameObjectProperties
   );
-  const protoProperties = { ...gameObjectTypeComputerProtoProperties };
+  const protoProperties = { ...gameObjectProtoProperties };
 
   const gameObjectMerged = Object.assign(Object.create(protoProperties), base);
 

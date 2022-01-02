@@ -4,14 +4,14 @@ import aiObjectBuild from '../ai/aiObjectBuild';
 import gameObjectBuild from './gameObjectBuild';
 
 const game = (() => {
-  let current = {};
+  const current = {};
 
   const options = {
     default: {
       gameObjectType: 'computer',
       gameObjectProperties: {},
       gameObjectProtoProperties: {},
-      gridLength: 10,
+      columnLength: 10,
       rowLength: 10,
       boardObjectProperties: {},
       boardObjectProtoProperties: {},
@@ -28,10 +28,10 @@ const game = (() => {
   };
 
   function start(customOptions) {
-    const settings = options(customOptions);
+    const settings = options.update(customOptions);
 
     const boardObject = boardObjectBuild(
-      settings.gridLength,
+      settings.columnLength,
       settings.rowLength,
       settings.boardObjectProperties,
       settings.boardObjectProtoProperties,
@@ -50,12 +50,11 @@ const game = (() => {
       settings.aiObjectProperties,
       settings.aiObjectProtoProperties
     );
-
     const firstPlayerObject = playerObject;
     const secondPlayerObject =
       settings.gameObjectType === 'computer' ? aiObject : playerObject;
 
-    current = gameObjectBuild.type[settings.gameObjectType](
+    current.storage = gameObjectBuild(
       firstPlayerObject,
       secondPlayerObject,
       settings.gameObjectProperties,

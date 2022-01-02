@@ -4,11 +4,11 @@ const domQuery = {
       return document.querySelector('.content');
     },
     board: {
-      main: () => {
-        return document.querySelector('board__main');
+      first: () => {
+        return document.querySelector('.board__first');
       },
-      secondary: () => {
-        return document.querySelector('board__secondary');
+      second: () => {
+        return document.querySelector('.board__second');
       }
     }
   }
