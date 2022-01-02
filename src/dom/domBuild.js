@@ -44,6 +44,25 @@ const domBuild = {
     );
 
     return page;
+  },
+  board: (gridName, gridLength, rowLength) => {
+    const boardGridElement = domElement.create('div', {
+      class: `${gridName}__grid`
+    });
+
+    for (let iGrid = 0; iGrid < gridLength; iGrid += 1) {
+      for (let iRow = 0; iRow < rowLength; iRow += 1) {
+        const gridSquareElement = domElement.create('div', {
+          class: 'grid__square',
+          'data-grid': iGrid,
+          'data-row': iRow
+        });
+
+        boardGridElement.appendChild(gridSquareElement);
+      }
+    }
+
+    return boardGridElement;
   }
 };
 

@@ -1,4 +1,4 @@
-/**  *@jest-environment jsdom */
+/** *@jest-environment jsdom */
 
 import domElement from '../../dom/domElement';
 
