@@ -1,23 +1,28 @@
-import dom from './dom';
+import domBoard from './domBoard';
 import domQuery from '../tools/domQuery';
+import domSkeleton from './domSkeleton';
+
 import pubsub from '../tools/pubsub';
+import '../game/gameController';
 
 const domController = {
   build: {
     page: () => {
       domController.clear.page();
-      domQuery.element.content().appendChild(dom.build.skeleton());
+
+      domQuery.element.content().appendChild(domSkeleton());
     },
-    board: (boardObjectSize) => {
-      const [parentElementName, gridName, gridSize] = boardObjectSize;
-      const { columnLength, rowLength } = gridSize;
+    board: ([position, boardObject]) => {
+      const boardObjectID = boardObject.properties.id;
+      const boardObjectColumn = boardObject.properties.size.columnLength;
+      const boardObjectRow = boardObject.properties.size.rowLength;
 
-      domController.clear.board(parentElementName);
+      domController.clear.board(position);
 
-      const parentElement = domQuery.element.board[parentElementName]();
+      const parent = domQuery.element.board[position]();
 
-      parentElement.appendChild(
-        dom.build.board(gridName, columnLength, rowLength)
+      parent.appendChild(
+        domBoard(position, boardObjectID, boardObjectColumn, boardObjectRow)
       );
     }
   },

@@ -138,7 +138,7 @@ const testShipObjectCountLengthTemplate = {
 };
 
 test('that every ship object type is added to the testBoardObject and that every ship is to length', () => {
-  expect(aiRandomBoard(testBoardObject)).toBe(true);
+  expect(aiRandomBoard(testBoardObject, true)).toBe(true);
 
   const testShipObjects = [];
 
@@ -176,8 +176,8 @@ test('testBoardObject and testBoardObjectCopy should not match', () => {
 
   expect(testBoardObject.board).toStrictEqual(testBoardObjectCopy.board);
 
-  aiRandomBoard(testBoardObject);
-  aiRandomBoard(testBoardObjectCopy);
+  aiRandomBoard(testBoardObject, true);
+  aiRandomBoard(testBoardObjectCopy, true);
 
   expect(testBoardObject.board).not.toStrictEqual(testBoardObjectCopy.board);
 });

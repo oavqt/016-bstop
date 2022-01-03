@@ -8,7 +8,7 @@ const game = (() => {
 
   const options = {
     default: {
-      gameObjectType: 'computer',
+      gameObjectType: 'npc',
       gameObjectProperties: {},
       gameObjectProtoProperties: {},
       columnLength: 10,
@@ -27,32 +27,40 @@ const game = (() => {
     }
   };
 
+  function createPlayer(settings, player) {
+    return (settings.gameObjectType === 'npc' && player === 'second') ||
+      settings.gameObjectType === 'npcvnpc'
+      ? aiObjectBuild(
+          boardObjectBuild(
+            settings.columnLength,
+            settings.rowLength,
+            settings.boardObjectProperties,
+            settings.boardObjectProtoProperties,
+            settings.boardCellObjectProperties,
+            settings.boardCellObjectProtoProperties
+          ),
+          settings.aiObjectProperties,
+          settings.aiObjectProtoProperties
+        )
+      : playerObjectBuild(
+          boardObjectBuild(
+            settings.columnLength,
+            settings.rowLength,
+            settings.boardObjectProperties,
+            settings.boardObjectProtoProperties,
+            settings.boardCellObjectProperties,
+            settings.boardCellObjectProtoProperties
+          ),
+          settings.playerObjectProperties,
+          settings.playerObjectProtoProperties
+        );
+  }
+
   function start(customOptions) {
     const settings = options.update(customOptions);
 
-    const boardObject = boardObjectBuild(
-      settings.columnLength,
-      settings.rowLength,
-      settings.boardObjectProperties,
-      settings.boardObjectProtoProperties,
-      settings.boardCellObjectProperties,
-      settings.boardCellObjectProtoProperties
-    );
-
-    const playerObject = playerObjectBuild(
-      boardObject,
-      settings.playerObjectProperties,
-      settings.playerObjectProtoProperties
-    );
-
-    const aiObject = aiObjectBuild(
-      boardObject,
-      settings.aiObjectProperties,
-      settings.aiObjectProtoProperties
-    );
-    const firstPlayerObject = playerObject;
-    const secondPlayerObject =
-      settings.gameObjectType === 'computer' ? aiObject : playerObject;
+    const firstPlayerObject = createPlayer(settings, 'first');
+    const secondPlayerObject = createPlayer(settings, 'second');
 
     current.storage = gameObjectBuild(
       firstPlayerObject,

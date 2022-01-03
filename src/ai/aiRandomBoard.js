@@ -4,7 +4,7 @@ import shipObjectBuild from '../ship/shipObjectBuild';
 
 import pubsub from '../tools/pubsub';
 
-const aiRandomBoard = (boardObject) => {
+const aiRandomBoard = (boardObject, jest = false) => {
   const shipObjectType = [
     'carrier',
     'battleship',
@@ -32,7 +32,8 @@ const aiRandomBoard = (boardObject) => {
         boardObject,
         shipObject,
         [coordsY, coordsX],
-        randomDirection
+        randomDirection,
+        jest
       );
     }
   });

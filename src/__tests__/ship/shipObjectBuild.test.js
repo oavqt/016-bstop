@@ -1,7 +1,6 @@
 import shipObjectBuild from '../../ship/shipObjectBuild';
 
 const testCarrierObject = {
-  id: null,
   isHit: false,
   isSunk: false,
   type: 'Carrier',
@@ -10,7 +9,6 @@ const testCarrierObject = {
 };
 
 const testBattleshipObject = {
-  id: null,
   isHit: false,
   isSunk: false,
   type: 'Battleship',
@@ -19,7 +17,6 @@ const testBattleshipObject = {
 };
 
 const testDestroyerObject = {
-  id: null,
   isHit: false,
   isSunk: false,
   type: 'Destroyer',
@@ -41,12 +38,12 @@ const testShipObjectProtoProperties = {
 
 test('return default(battleship)', () => {
   const battleship = shipObjectBuild();
-  expect(battleship).toStrictEqual(testBattleshipObject);
+  expect(battleship).toMatchObject(testBattleshipObject);
 });
 
 test('return destroyer', () => {
   const destroyer = shipObjectBuild('destroyer');
-  expect(destroyer).toStrictEqual(testDestroyerObject);
+  expect(destroyer).toMatchObject(testDestroyerObject);
 });
 
 test('return carrier with a custom prototype passed in as an object', () => {
@@ -55,7 +52,7 @@ test('return carrier with a custom prototype passed in as an object', () => {
     null,
     testShipObjectProtoProperties
   );
-  expect(carrier).toStrictEqual(testCarrierObject);
+  expect(carrier).toMatchObject(testCarrierObject);
   expect(Object.getPrototypeOf(carrier)).toStrictEqual(
     testShipObjectProtoProperties
   );

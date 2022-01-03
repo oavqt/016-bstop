@@ -28,13 +28,13 @@ describe('boardStatusUpdate.isTurn', () => {
 
 describe('boardStatusUpdate.isWinner', () => {
   test('if testBoardObject has won the game return true', () => {
-    expect(boardStatusUpdate.isWinner(testBoardObject)).toBe(true);
+    expect(boardStatusUpdate.isWinner(testBoardObject, true)).toBe(true);
   });
 
   test('if testBoardObject has not won the game return false', () => {
     testBoardObject.status.isWinner = false;
     testBoardObject.stats.ships.total += 1;
 
-    expect(boardStatusUpdate.isWinner(testBoardObject)).toBe(false);
+    expect(boardStatusUpdate.isWinner(testBoardObject, true)).toBe(false);
   });
 });

@@ -1,5 +1,8 @@
-import pubsub from '../tools/pubsub';
 import boardObject from './boardObject';
+
+import pubsub from '../tools/pubsub';
+import './boardCoordinates';
+import '../tools/randomID';
 
 const boardObjectBuild = (
   columnLength = 10,
@@ -21,6 +24,7 @@ const boardObjectBuild = (
   const boardObjectMerged = Object.assign(Object.create(protoProperties), base);
 
   pubsub.publish('boardCoordinates', boardObjectMerged);
+  pubsub.publish('boardObjectID', boardObjectMerged);
 
   return boardObjectMerged;
 };

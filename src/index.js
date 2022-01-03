@@ -3,7 +3,7 @@ const domController = require('./dom/domController');
 const gameController = require('./game/gameController');
 
 domController.default.build.page();
-gameController.default.create.game.type.computer();
+gameController.default.create.game.type.npc();
 
 if (module.hot) {
   module.hot.accept();
@@ -13,5 +13,5 @@ if (module.hot) {
   while (content.firstChild) content.removeChild(content.lastChild);
 
   domController.default.build.page();
-  gameController.default.create.game.type.computer();
+  gameController.default.create.game.type.npc();
 }

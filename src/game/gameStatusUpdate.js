@@ -37,4 +37,6 @@ const gameStatusUpdate = {
   }
 };
 
+pubsub.subscribe('gameStatusUpdateIsWinner', gameStatusUpdate.isWinner);
+
 export default gameStatusUpdate;

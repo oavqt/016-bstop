@@ -12,6 +12,10 @@
   width: 3em;
 }
 
+.--ship {
+  background: #313131;
+}
+
 .--small {
   height: 1.5em;
   width: 1.5em;

@@ -15,6 +15,7 @@ const boardObject = (
       boardCellObjectProtoProperties
     ),
     properties: {
+      id: null,
       status: {
         isTurn: false,
         isWinner: false

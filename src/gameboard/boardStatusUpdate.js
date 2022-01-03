@@ -1,4 +1,5 @@
 import pubsub from '../tools/pubsub';
+import '../game/gameStatusUpdate';
 
 const boardStatusUpdate = {
   isTurn: (boardObjectValueArray) => {
@@ -9,7 +10,7 @@ const boardStatusUpdate = {
 
     return boardObjectStatus.isTurn;
   },
-  isWinner: (boardObject) => {
+  isWinner: (boardObject, jest = false) => {
     const boardObjectStats = boardObject.stats;
     const boardObjectStatus = boardObject.status;
 
@@ -19,7 +20,8 @@ const boardStatusUpdate = {
     ) {
       boardObjectStatus.isWinner = true;
 
-      pubsub.publish('gameStatusUpdateIsWinner', boardObjectStatus.isWinner);
+      if (!jest)
+        pubsub.publish('gameStatusUpdateIsWinner', boardObjectStatus.isWinner);
     }
 
     return boardObjectStatus.isWinner;

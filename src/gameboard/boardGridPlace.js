@@ -1,6 +1,14 @@
 import pubsub from '../tools/pubsub';
+import './boardStatsUpdate';
+import '../ship/shipObjectCoordinates';
 
-function boardGridPlace(boardObject, shipObject, coords, direction = 'left') {
+function boardGridPlace(
+  boardObject,
+  shipObject,
+  coords,
+  direction = 'left',
+  jest = false
+) {
   const { board } = boardObject;
   const shipLength = shipObject.layout.length;
   const [coordsY, coordsX] = coords;
@@ -27,8 +35,10 @@ function boardGridPlace(boardObject, shipObject, coords, direction = 'left') {
     cellObject.ship = shipObject;
   });
 
-  pubsub.publish('shipObjectCoordinates', boardCellObjectArray);
-  pubsub.publish('boardStatsUpdateShips', [boardObject, 1]);
+  if (!jest) {
+    pubsub.publish('shipObjectCoordinates', boardCellObjectArray);
+    pubsub.publish('boardStatsUpdateShips', [boardObject, 1]);
+  }
 
   return true;
 }

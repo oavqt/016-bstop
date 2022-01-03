@@ -79,7 +79,7 @@ test.each(testFalse)(
   (coords) => {
     const [coordsY, coordsX] = coords;
 
-    boardReceiveAttack(testBoardObject, coords);
+    boardReceiveAttack(testBoardObject, coords, true);
     expect(testBoardObject.board[coordsY][coordsX].selected).toBe(true);
     expect(testBoardObject.board[coordsY][coordsX].status.isMissed).toBe(true);
     expect(testBoardObject.board[coordsY][coordsX].status.isHit).toBe(false);
@@ -91,7 +91,7 @@ test.each(testTrue)(
   (coords) => {
     const [coordsY, coordsX] = coords;
 
-    boardReceiveAttack(testBoardObject, coords);
+    boardReceiveAttack(testBoardObject, coords, true);
     expect(testBoardObject.board[coordsY][coordsX].selected).toBe(true);
     expect(testBoardObject.board[coordsY][coordsX].status.isMissed).toBe(false);
     expect(testBoardObject.board[coordsY][coordsX].status.isHit).toBe(true);

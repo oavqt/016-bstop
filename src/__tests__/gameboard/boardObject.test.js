@@ -2,6 +2,7 @@ import boardObject from '../../gameboard/boardObject';
 
 const testBoardObject = {
   properties: {
+    id: null,
     status: {
       isTurn: false,
       isWinner: false

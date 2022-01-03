@@ -1,6 +1,8 @@
 import pubsub from '../tools/pubsub';
+import '../gameboard/boardStatsUpdate';
+import '../gameboard/boardStatusUpdate';
 
-function shipObjectSunk(boardObject, coords) {
+function shipObjectSunk(boardObject, coords, jest = false) {
   const [coordsY, coordsX] = coords;
 
   const boardCellObject = boardObject.board[coordsY][coordsX];
@@ -9,7 +11,7 @@ function shipObjectSunk(boardObject, coords) {
 
   const status = shipObjectLayout.every((item) => item === '[-][-]');
 
-  if (status === true) {
+  if (status === true && !jest) {
     pubsub.publish('boardStatsUpdateShips', -1);
     pubsub.publish('boardStatusUpdateIsWinnerQuery', boardObject);
   }

@@ -1,5 +1,8 @@
 import shipObject from './shipObject';
 
+import pubsub from '../tools/pubsub';
+import '../tools/randomID';
+
 const shipObjectBuild = (
   type = 'battleship',
   shipObjectProperties = {},
@@ -9,6 +12,8 @@ const shipObjectBuild = (
   const protoProperties = { ...shipObjectProtoProperties };
 
   const shipObjectMerged = Object.assign(Object.create(protoProperties), base);
+
+  pubsub.publish('shipObjectID', shipObjectMerged);
 
   return shipObjectMerged;
 };

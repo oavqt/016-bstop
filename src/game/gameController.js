@@ -5,21 +5,21 @@ import boardReceiveAttack from '../gameboard/boardReceiveAttack';
 import boardStatsUpdate from '../gameboard/boardStatsUpdate';
 
 import game from './game';
-import gameStatusUpdate from './gameStatusUpdate';
-
-import pubsub from '../tools/pubsub';
 
 import shipObjectBuild from '../ship/shipObjectBuild';
 import shipObjectHit from '../ship/shipObjectHit';
 import shipObjectSunk from '../ship/shipObjectSunk';
 
+import pubsub from '../tools/pubsub';
+import '../dom/domController';
+
 const gameController = {
   create: {
     game: {
       type: {
-        computer: (customOptions) => {
+        npc: (customOptions) => {
           const computerOptions = {
-            gameObjectType: 'computer',
+            gameObjectType: 'npc',
             ...customOptions
           };
 
@@ -32,14 +32,12 @@ const gameController = {
 
           pubsub.publish('firstPlayerObjectDOMBuildBoard', [
             'first',
-            'firstPlayerObject',
-            gameController.get.firstPlayerObject().boardObject.properties.size
+            gameController.get.firstPlayerObject().boardObject
           ]);
 
           pubsub.publish('secondPlayerObjectDOMBuildBoard', [
             'second',
-            'secondPlayerObject',
-            gameController.get.secondPlayerObject().boardObject.properties.size
+            gameController.get.secondPlayerObject().boardObject
           ]);
         }
       }
@@ -57,13 +55,7 @@ const gameController = {
     }
   },
   methods: {
-    game: {
-      status: {
-        isWinner: (signal) => {
-          if (signal) gameStatusUpdate(gameController.get.currentGame());
-        }
-      }
-    },
+    game: {},
     board: {
       receiveAttack: (player, coords) => {
         boardReceiveAttack(gameController.get[player](), coords);
@@ -104,10 +96,5 @@ const gameController = {
     }
   }
 };
-
-pubsub.subscribe(
-  'gameStatusUpdateIsWinner',
-  gameController.methods.game.status.isWinner
-);
 
 export default gameController;
