@@ -25,11 +25,6 @@ const gameController = {
 
           game.start(computerOptions);
 
-          pubsub.publish(
-            'aiRandomBoard',
-            gameController.get.secondPlayerObject().boardObject
-          );
-
           pubsub.publish('firstPlayerObjectDOMBuildBoard', [
             'first',
             gameController.get.firstPlayerObject().boardObject
@@ -39,6 +34,11 @@ const gameController = {
             'second',
             gameController.get.secondPlayerObject().boardObject
           ]);
+
+          pubsub.publish(
+            'aiRandomBoard',
+            gameController.get.secondPlayerObject().boardObject
+          );
         }
       }
     }

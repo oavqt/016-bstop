@@ -14,12 +14,13 @@ const domQuery = {
         square: (boardObjectID, coords) => {
           const [column, row] = coords;
           const squares = [
-            ...document.querySelectorAll(`${boardObjectID}__grid .grid__square`)
+            ...document.querySelectorAll(`.${boardObjectID}__grid button`)
           ];
 
           return squares.find(
             (square) =>
-              square.dataset.column === column && square.dataset.row === row
+              square.dataset.column === column.toString() &&
+              square.dataset.row === row.toString()
           );
         }
       }

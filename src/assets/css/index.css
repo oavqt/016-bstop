@@ -16,6 +16,26 @@
   background: #313131;
 }
 
+.--ship--a {
+  background: #e56399;
+}
+
+.--ship--b {
+  background: #e5d4ce;
+}
+
+.--ship--c {
+  background: #de6e4b;
+}
+
+.--ship--d {
+  background: #7fd1b9;
+}
+
+.--ship--e {
+  background: #7a6563;
+}
+
 .--small {
   height: 1.5em;
   width: 1.5em;

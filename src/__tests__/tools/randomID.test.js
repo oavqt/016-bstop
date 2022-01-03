@@ -1,15 +1,15 @@
 import randomID from '../../tools/randomID';
 
 describe('randomID.create', () => {
-  test('return a string(lenght) contaning random characters using 33-126 ascii decimals', () => {
-    expect(randomID.create(12)).toHaveLength(12);
+  test('return a string(lenght) contaning random letter characters using 97-122 ascii decimals and random numbers 0-9', () => {
+    expect(randomID.create(6)).toHaveLength(12);
   });
 
   const testIDs = [
-    randomID.create(12),
-    randomID.create(12),
-    randomID.create(12),
-    randomID.create(12)
+    randomID.create(6),
+    randomID.create(6),
+    randomID.create(6),
+    randomID.create(6)
   ];
 
   test('returned strings should not be the same', () => {
