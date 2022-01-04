@@ -1,0 +1,16 @@
+-let users select where to place their ships instead of it being random
+
+-create the functions to switch players when it is their turn
+-switch the display depending on whose turn it is
+-create switch screen
+
+-add event listener to receive attacks
+-display attacks
+
+-display stats
+
+-create a function to end the game
+
+-display winner
+
+-css
